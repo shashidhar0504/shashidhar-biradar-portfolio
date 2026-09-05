@@ -62,6 +62,15 @@ export default function CommandCenter() {
             </span>
           </div>
         </div>
+
+        {/* Mobile Tech Stack Chips Fallback */}
+        <div className="mt-3 sm:hidden flex flex-wrap justify-center gap-1.5 pt-2 border-t border-slate-100">
+          {nodes.map((node, i) => (
+            <span key={i} className={`text-[10px] font-mono font-semibold px-2 py-0.5 rounded-md border ${node.color}`}>
+              {node.name}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Floating Orbit Tech Nodes */}

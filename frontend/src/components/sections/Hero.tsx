@@ -87,13 +87,13 @@ export default function Hero() {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4">
-            <a href="#projects" className="btn-primary">
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
+            <a href="#projects" className="btn-primary w-full sm:w-auto justify-center">
               View My Work
               <ArrowRight className="h-4 w-4" />
             </a>
 
-            <a href="#contact" className="btn-secondary">
+            <a href="#contact" className="btn-secondary w-full sm:w-auto justify-center">
               Let's Work Together
             </a>
 
@@ -101,7 +101,7 @@ export default function Hero() {
               href={profile.resumeFile}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3.5 font-heading text-sm font-semibold text-slate-700 hover:border-blue-500 hover:text-blue-600 transition-colors shadow-sm"
+              className="flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3.5 font-heading text-sm font-semibold text-slate-700 hover:border-blue-500 hover:text-blue-600 transition-colors shadow-sm w-full sm:w-auto"
             >
               <FileText className="h-4 w-4 text-blue-600" />
               View Resume PDF

@@ -114,7 +114,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden glass-panel border-b border-slate-200 px-6 py-6 animate-in slide-in-from-top-4 duration-200 bg-white/95">
+        <div className="lg:hidden glass-panel border-b border-slate-200 px-6 py-6 animate-in slide-in-from-top-4 duration-200 bg-white/95 max-h-[85vh] overflow-y-auto shadow-xl">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a

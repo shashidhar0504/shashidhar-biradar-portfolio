@@ -29,11 +29,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-10 bg-slate-900/40 backdrop-blur-md animate-in fade-in duration-200">
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass-panel rounded-3xl border border-slate-200 shadow-2xl p-6 sm:p-8 md:p-10 text-slate-800 bg-white custom-scrollbar">
+      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass-panel rounded-3xl border border-slate-200 shadow-2xl p-5 sm:p-8 md:p-10 text-slate-800 bg-white custom-scrollbar">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2.5 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors border border-slate-200"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2.5 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors border border-slate-200 z-10"
           aria-label="Close modal"
         >
           <X className="h-5 w-5" />

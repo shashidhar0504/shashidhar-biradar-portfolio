@@ -192,10 +192,10 @@ export default function FloatingChatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
       {/* Light Theme AI Chatbot Window */}
       {isOpen && (
-        <div className="glass-panel w-[90vw] max-w-[360px] h-[500px] rounded-3xl p-4 shadow-2xl flex flex-col justify-between border border-slate-200 animate-in fade-in slide-in-from-bottom-4 duration-300 backdrop-blur-2xl bg-white/95">
+        <div className="glass-panel w-[92vw] sm:w-[360px] max-w-[360px] h-[480px] sm:h-[500px] max-h-[82vh] rounded-3xl p-4 shadow-2xl flex flex-col justify-between border border-slate-200 animate-in fade-in slide-in-from-bottom-4 duration-300 backdrop-blur-2xl bg-white/95">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-slate-100 pb-3">
             <div className="flex items-center gap-2.5">
