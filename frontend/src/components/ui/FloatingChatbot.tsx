@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { MessageSquare, X, Send, Bot, Sparkles, ExternalLink, Mail, Phone, CheckCircle2, AlertCircle, FileText, Linkedin, Github } from "lucide-react";
+import { profile } from "../../data/portfolio";
 
 type LinkItem = {
   label: string;
@@ -69,12 +70,12 @@ export default function FloatingChatbot() {
   }, [messages, isOpen, isTyping, viewMode]);
 
   // Verified Direct Contact Links
-  const phoneCallUrl = "tel:+916363284060";
-  const whatsappNumber = "917676642055";
-  const emailAddress = "shashidharbiradar6@gmail.com";
-  const linkedinUrl = "https://www.linkedin.com/in/shashidharbiradar";
-  const githubUrl = "https://github.com/shashidharbiradar";
-  const resumeUrl = "https://drive.google.com/file/d/1OtPn6N2_vjpEac3hwBfwqmav_aWpaUcX/view?usp=sharing";
+  const phoneCallUrl = `tel:${profile.phone}`;
+  const whatsappNumber = profile.whatsappNumber || "916363284060";
+  const emailAddress = profile.email;
+  const linkedinUrl = profile.linkedin;
+  const githubUrl = profile.github;
+  const resumeUrl = profile.resumeFile;
 
   const defaultWhatsappMsg = encodeURIComponent(
     "Hello Shashidhar, I visited your portfolio and would like to discuss an opportunity/project."
