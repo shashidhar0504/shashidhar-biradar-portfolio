@@ -18,7 +18,7 @@ import FloatingChatbot from "./components/ui/FloatingChatbot";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#0B0F17] font-body text-slate-100 selection:bg-cyan-500 selection:text-white">
+    <div className="min-h-screen bg-[#F8FAFC] font-body text-slate-900 selection:bg-blue-600 selection:text-white">
       <CustomCursor />
       <Navbar />
       <main>

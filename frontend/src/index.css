@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -22,7 +22,7 @@ html {
 }
 
 ::selection {
-  background-color: #06b6d4;
+  background-color: #2563eb;
   color: #ffffff;
 }
 
@@ -30,36 +30,36 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0f17;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f2937;
+  background: #cbd5e1;
   border-radius: 9999px;
-  border: 2px solid #0b0f17;
+  border: 2px solid #f8fafc;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
+  background: #2563eb;
 }
 
 @layer components {
   .glass {
-    @apply bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 shadow-card;
+    @apply bg-white/80 backdrop-blur-xl border border-slate-200/80 shadow-soft;
   }
 
   .glass-card {
-    @apply bg-gradient-to-b from-slate-900/80 to-slate-950/90 backdrop-blur-xl border border-slate-800/80 hover:border-cyan-500/40 transition-all duration-300 shadow-card;
+    @apply bg-white/90 backdrop-blur-xl border border-slate-200/80 hover:border-blue-500/40 hover:shadow-card transition-all duration-300 shadow-soft;
   }
 
   .glass-panel {
-    @apply bg-slate-950/70 backdrop-blur-2xl border border-slate-800 shadow-glow-cyan;
+    @apply bg-white/95 backdrop-blur-2xl border border-slate-200 shadow-card;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 bg-clip-text text-transparent;
   }
 
   .gradient-text-purple {
-    @apply bg-gradient-to-r from-cyan-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent;
   }
 
   .section-padding {
@@ -67,19 +67,19 @@ html {
   }
 
   .eyebrow {
-    @apply font-mono text-xs tracking-[0.2em] uppercase text-cyan-400 font-semibold flex items-center gap-2;
+    @apply font-mono text-xs tracking-[0.2em] uppercase text-blue-600 font-semibold flex items-center gap-2;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 font-heading text-sm font-semibold text-white shadow-glow-cyan transition-all duration-300 hover:from-cyan-400 hover:to-blue-500 hover:-translate-y-0.5 hover:shadow-cyan-500/50 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3.5 font-heading text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:from-blue-500 hover:to-indigo-500 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700/80 bg-slate-900/80 px-6 py-3.5 font-heading text-sm font-semibold text-slate-200 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 hover:bg-slate-800 hover:text-white hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 font-heading text-sm font-semibold text-slate-800 backdrop-blur-md transition-all duration-300 hover:border-blue-500 hover:bg-slate-50 hover:text-blue-600 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
   }
 
   .tech-pill {
-    @apply rounded-md border border-cyan-500/20 bg-cyan-950/30 px-2.5 py-1 font-mono text-xs text-cyan-300 hover:border-cyan-400/40 transition-colors;
+    @apply rounded-md border border-blue-200/80 bg-blue-50/80 px-2.5 py-1 font-mono text-xs text-blue-700 hover:border-blue-300 transition-colors;
   }
 }
 
@@ -87,6 +87,6 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid #2563eb;
   outline-offset: 2px;
 }

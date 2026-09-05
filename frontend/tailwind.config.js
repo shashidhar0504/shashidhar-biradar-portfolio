@@ -1,29 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        dark: {
-          bg: "#0B0F17",
-          card: "#111827",
-          subtle: "#1F2937",
-          border: "#374151",
-        },
-        cyan: {
-          400: "#38BDF8",
-          500: "#06B6D4",
-          600: "#0891B2",
-        },
-        blue: {
-          500: "#3B82F6",
-          600: "#2563EB",
-          700: "#1D4ED8",
+        light: {
+          bg: "#F8FAFC",
+          card: "#FFFFFF",
+          subtle: "#F1F5F9",
+          border: "#E2E8F0",
         },
         brand: {
-          accent: "#38BDF8",
-          secondary: "#6366F1",
+          blue: "#2563EB",
+          indigo: "#4F46E5",
+          cyan: "#0284C7",
+          accent: "#2563EB",
           emerald: "#10B981",
         },
       },
@@ -33,16 +24,16 @@ export default {
         mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },
       boxShadow: {
-        glow: "0 0 40px -10px rgba(56, 189, 248, 0.25)",
-        "glow-cyan": "0 0 30px -5px rgba(6, 182, 212, 0.4)",
-        "glow-blue": "0 0 30px -5px rgba(59, 130, 246, 0.4)",
-        "glow-purple": "0 0 30px -5px rgba(99, 102, 241, 0.4)",
-        card: "0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)",
+        soft: "0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(15, 23, 42, 0.03)",
+        card: "0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.04)",
+        glow: "0 10px 40px -10px rgba(37, 99, 235, 0.25)",
+        "glow-cyan": "0 10px 35px -5px rgba(2, 132, 199, 0.3)",
+        "glow-blue": "0 10px 35px -5px rgba(37, 99, 235, 0.3)",
       },
       backgroundImage: {
         "grid-pattern":
-          "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
-        "dots-pattern": "radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(15,23,42,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.04) 1px, transparent 1px)",
+        "dots-pattern": "radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       animation: {

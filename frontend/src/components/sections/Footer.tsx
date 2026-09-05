@@ -11,20 +11,20 @@ export default function Footer() {
   );
 
   return (
-    <footer className="relative bg-[#070A0F] text-slate-400 border-t border-slate-800/80 py-12 px-6 lg:px-12">
+    <footer className="relative bg-slate-900 text-slate-300 border-t border-slate-800 py-12 px-6 lg:px-12">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-800/80 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-800 items-start">
           {/* Left Brand Column */}
           <div className="md:col-span-6 space-y-4">
             <a href="#hero" className="flex items-center gap-2.5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 font-mono font-bold text-white shadow-glow-cyan">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 font-mono font-bold text-white shadow-md">
                 SB
               </div>
               <div>
                 <span className="font-heading text-lg font-bold text-white tracking-tight">
                   Shashidhar Biradar
                 </span>
-                <span className="block text-xs font-mono text-cyan-400">
+                <span className="block text-xs font-mono text-blue-400">
                   Full Stack Java Developer | AI & Automation Engineer
                 </span>
               </div>
@@ -46,37 +46,37 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs font-mono">
               <li>
-                <a href="#about" className="hover:text-cyan-400 transition-colors">
+                <a href="#about" className="hover:text-blue-400 transition-colors">
                   About & Background
                 </a>
               </li>
               <li>
-                <a href="#capabilities" className="hover:text-cyan-400 transition-colors">
+                <a href="#capabilities" className="hover:text-blue-400 transition-colors">
                   Capability Map
                 </a>
               </li>
               <li>
-                <a href="#skills" className="hover:text-cyan-400 transition-colors">
+                <a href="#skills" className="hover:text-blue-400 transition-colors">
                   Skill Ecosystem
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-cyan-400 transition-colors">
+                <a href="#projects" className="hover:text-blue-400 transition-colors">
                   Featured Projects
                 </a>
               </li>
               <li>
-                <a href="#ai-automation" className="hover:text-cyan-400 transition-colors">
+                <a href="#ai-automation" className="hover:text-blue-400 transition-colors">
                   AI & Automation Journey
                 </a>
               </li>
               <li>
-                <a href="#workflow" className="hover:text-cyan-400 transition-colors">
+                <a href="#workflow" className="hover:text-blue-400 transition-colors">
                   Development Workflow
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-cyan-400 transition-colors">
+                <a href="#contact" className="hover:text-blue-400 transition-colors">
                   Contact Me
                 </a>
               </li>
@@ -100,12 +100,12 @@ export default function Footer() {
               </a>
 
               <a href={`tel:${profile.phone}`} className="flex items-center gap-2 hover:text-white">
-                <Phone className="h-4 w-4 text-cyan-400" />
+                <Phone className="h-4 w-4 text-blue-400" />
                 {profile.phone}
               </a>
 
               <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-white">
-                <Mail className="h-4 w-4 text-cyan-400" />
+                <Mail className="h-4 w-4 text-blue-400" />
                 {profile.email}
               </a>
 
@@ -115,7 +115,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-white"
               >
-                <Github className="h-4 w-4 text-cyan-400" />
+                <Github className="h-4 w-4 text-blue-400" />
                 GitHub Profile
               </a>
 
@@ -125,7 +125,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-white"
               >
-                <Linkedin className="h-4 w-4 text-cyan-400" />
+                <Linkedin className="h-4 w-4 text-blue-400" />
                 LinkedIn Profile
               </a>
             </div>
@@ -135,14 +135,14 @@ export default function Footer() {
         {/* Bottom Copyright & Back to Top Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
           <p>© 2026 Shashidhar Biradar. All rights reserved.</p>
-          <p className="text-slate-300">Designed & built with code, curiosity, and continuous learning.</p>
+          <p className="text-slate-400">Designed & built with code, curiosity, and continuous learning.</p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 rounded-xl border border-slate-800 bg-slate-900 px-3 py-1.5 text-slate-300 hover:text-white hover:border-cyan-500/50 transition-colors"
+            className="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800 px-3 py-1.5 text-slate-200 hover:text-white hover:border-blue-400 transition-colors"
             aria-label="Back to top"
           >
-            <ArrowUp className="h-3.5 w-3.5 text-cyan-400" />
+            <ArrowUp className="h-3.5 w-3.5 text-blue-400" />
             Top
           </button>
         </div>

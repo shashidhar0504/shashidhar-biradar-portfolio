@@ -15,7 +15,7 @@ export default function WhyWorkWithMe() {
   };
 
   return (
-    <section id="why-work-with-me" className="relative section-padding bg-slate-950/80 border-t border-slate-800/80">
+    <section id="why-work-with-me" className="relative section-padding bg-slate-100/50 border-t border-slate-200">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center space-y-3 mb-16">
@@ -23,10 +23,10 @@ export default function WhyWorkWithMe() {
             <Award className="h-4 w-4" />
             Value Proposition
           </div>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Why Work <span className="gradient-text">With Me</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
             Combining rigorous software engineering, modern AI integration, business understanding, and real-world execution.
           </p>
         </div>
@@ -38,16 +38,16 @@ export default function WhyWorkWithMe() {
             return (
               <div
                 key={idx}
-                className="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 group"
+                className="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200/80 hover:border-blue-500/40 transition-all duration-300 group bg-white/90 shadow-md shadow-slate-200/40"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 mb-5 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 border border-blue-200 text-blue-600 mb-5 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   <Icon className="h-6 w-6" />
                 </div>
 
-                <h3 className="font-heading text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
+                <h3 className="font-heading text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{item.description}</p>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{item.description}</p>
               </div>
             );
           })}

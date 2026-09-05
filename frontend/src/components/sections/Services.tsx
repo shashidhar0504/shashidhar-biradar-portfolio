@@ -15,7 +15,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="relative section-padding bg-[#0B0F17]">
+    <section id="services" className="relative section-padding bg-slate-50/60">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center space-y-3 mb-16">
@@ -23,10 +23,10 @@ export default function Services() {
             <Globe className="h-4 w-4" />
             Client Solutions
           </div>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             What I Can <span className="gradient-text">Build For You</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
             From initial concept to full-stack code, API integrations, automated workflows, and production cloud launch.
           </p>
         </div>
@@ -38,17 +38,17 @@ export default function Services() {
             return (
               <div
                 key={idx}
-                className="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 group shadow-xl"
+                className="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200/80 hover:border-blue-500/40 transition-all duration-300 group shadow-lg shadow-slate-200/50 bg-white/90"
               >
                 <div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white shadow-lg mb-5 group-hover:scale-110 transition-transform">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white shadow-lg mb-5 group-hover:scale-110 transition-transform">
                     <Icon className="h-6 w-6" />
                   </div>
 
-                  <h3 className="font-heading text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">
+                  <h3 className="font-heading text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
                     {service.description}
                   </p>
                 </div>
@@ -64,7 +64,7 @@ export default function Services() {
 
                   <a
                     href="#contact"
-                    className="flex items-center gap-2 font-heading text-xs font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors pt-3 border-t border-slate-800/80"
+                    className="flex items-center gap-2 font-heading text-xs font-bold text-blue-600 group-hover:text-blue-800 transition-colors pt-3 border-t border-slate-200"
                   >
                     Discuss This Solution
                     <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />

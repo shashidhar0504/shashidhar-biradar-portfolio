@@ -56,18 +56,18 @@ export default function Skills() {
   const getLevelBadgeColor = (level: string) => {
     switch (level) {
       case "Advanced":
-        return "bg-cyan-950/80 text-cyan-300 border-cyan-500/40";
+        return "bg-blue-50 text-blue-700 border-blue-200";
       case "Strong":
-        return "bg-emerald-950/80 text-emerald-300 border-emerald-500/40";
+        return "bg-emerald-50 text-emerald-700 border-emerald-200";
       case "Experienced":
-        return "bg-blue-950/80 text-blue-300 border-blue-500/40";
+        return "bg-sky-50 text-sky-700 border-sky-200";
       default:
-        return "bg-purple-950/80 text-purple-300 border-purple-500/40";
+        return "bg-purple-50 text-purple-700 border-purple-200";
     }
   };
 
   return (
-    <section id="skills" className="relative section-padding bg-slate-950/80 border-t border-slate-800/80">
+    <section id="skills" className="relative section-padding bg-white border-t border-slate-200">
       <div className="mx-auto max-w-7xl">
         {/* Section Heading */}
         <div className="text-center space-y-3 mb-12">
@@ -75,10 +75,10 @@ export default function Skills() {
             <Code2 className="h-4 w-4" />
             Technical Arsenal
           </div>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Interactive <span className="gradient-text">Skill Ecosystem</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
             Categorized technologies backed by production experience, clear architecture patterns, and practical delivery.
           </p>
         </div>
@@ -91,8 +91,8 @@ export default function Skills() {
               onClick={() => setActiveTab(idx)}
               className={`rounded-2xl px-5 py-2.5 font-heading text-xs font-bold transition-all duration-200 ${
                 activeTab === idx
-                  ? "bg-cyan-500 text-slate-950 shadow-glow-cyan scale-105"
-                  : "bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-white border border-slate-800"
+                  ? "bg-blue-600 text-white shadow-glow scale-105"
+                  : "bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200"
               }`}
             >
               {cat.title}
@@ -107,11 +107,11 @@ export default function Skills() {
             return (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-5 hover:scale-[1.02] transition-all duration-300 group flex flex-col justify-between"
+                className="glass-card rounded-2xl p-5 hover:scale-[1.02] transition-all duration-300 group flex flex-col justify-between bg-white border border-slate-200 shadow-soft"
               >
                 <div>
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors shadow-md">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-sm">
                       <Icon className="h-5 w-5" />
                     </div>
                     <span
@@ -123,21 +123,21 @@ export default function Skills() {
                     </span>
                   </div>
 
-                  <h3 className="font-heading text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  <h3 className="font-heading text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                     {skill.name}
                   </h3>
-                  <span className="block font-mono text-[10px] text-slate-400 uppercase tracking-wider mb-2">
+                  <span className="block font-mono text-[10px] text-slate-500 font-medium uppercase tracking-wider mb-2">
                     {skill.category}
                   </span>
-                  <p className="text-xs text-slate-300 leading-relaxed">{skill.description}</p>
+                  <p className="text-xs text-slate-600 leading-relaxed">{skill.description}</p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                  <span className="flex items-center gap-1 text-emerald-400">
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                  <span className="flex items-center gap-1 text-emerald-600 font-semibold">
                     <CheckCircle className="h-3.5 w-3.5" />
                     Verified Proficiency
                   </span>
-                  <span className="text-slate-400">Java / Full Stack</span>
+                  <span>Java / Full Stack</span>
                 </div>
               </div>
             );
