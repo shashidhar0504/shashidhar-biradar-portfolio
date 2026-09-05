@@ -317,6 +317,7 @@ export const projects: Project[] = [
       "Integrated direct phone call & WhatsApp consultation triggers",
       "Clean, professional corporate design instilling financial trust",
     ],
+    liveUrl: "https://ca-shailesh-patil.vercel.app/",
     isProduction: true,
     myContribution: "Full lifecycle development: requirement discovery, UI layout, service copy structuring, and deployment.",
     featured: true,
