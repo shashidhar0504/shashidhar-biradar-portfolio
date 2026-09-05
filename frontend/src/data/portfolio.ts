@@ -337,7 +337,7 @@ export const projects: Project[] = [
   },
   {
     id: "solar-website",
-    title: "Solar & Renewable Energy Solution",
+    title: "Vishwa Solar Energy Solutions",
     category: "Business Websites",
     filterCategories: ["All", "Client Work", "Business Websites"],
     description:
@@ -348,6 +348,7 @@ export const projects: Project[] = [
       "Lead generation quote form routing inquiries to WhatsApp & Email",
       "Mobile-friendly responsive layout with high-contrast renewable theme",
     ],
+    liveUrl: "https://vishwa-solar-energy-solutions.vercel.app/",
     isProduction: true,
     myContribution: "Designed UI/UX, built interactive solar product showcase, implemented lead routing, and deployed.",
     featured: false,
