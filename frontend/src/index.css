@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -21,55 +22,64 @@ html {
 }
 
 ::selection {
-  background-color: #2563eb;
+  background-color: #06b6d4;
   color: #ffffff;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #0b0f17;
 }
 ::-webkit-scrollbar-thumb {
-  background: #93c5fd;
+  background: #1f2937;
   border-radius: 9999px;
+  border: 2px solid #0b0f17;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #06b6d4;
 }
 
 @layer components {
   .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-card;
+    @apply bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 shadow-card;
   }
 
-  .glass-strong {
-    @apply bg-white/85 backdrop-blur-2xl border border-white/70 shadow-card;
+  .glass-card {
+    @apply bg-gradient-to-b from-slate-900/80 to-slate-950/90 backdrop-blur-xl border border-slate-800/80 hover:border-cyan-500/40 transition-all duration-300 shadow-card;
+  }
+
+  .glass-panel {
+    @apply bg-slate-950/70 backdrop-blur-2xl border border-slate-800 shadow-glow-cyan;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-brand-blue via-brand-blue-light to-brand-blue bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-x;
+    @apply bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-purple {
+    @apply bg-gradient-to-r from-cyan-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent;
   }
 
   .section-padding {
-    @apply px-6 sm:px-10 lg:px-24 py-24 lg:py-32;
+    @apply px-6 sm:px-10 lg:px-20 py-20 lg:py-28;
   }
 
   .eyebrow {
-    @apply font-mono text-xs tracking-[0.2em] uppercase text-brand-blue font-medium;
+    @apply font-mono text-xs tracking-[0.2em] uppercase text-cyan-400 font-semibold flex items-center gap-2;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 font-heading font-medium text-white shadow-glow transition-all duration-300 hover:bg-brand-blue-dark hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 font-heading text-sm font-semibold text-white shadow-glow-cyan transition-all duration-300 hover:from-cyan-400 hover:to-blue-500 hover:-translate-y-0.5 hover:shadow-cyan-500/50 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-blue/20 bg-white px-7 py-3.5 font-heading font-medium text-ink-900 transition-all duration-300 hover:border-brand-blue hover:-translate-y-0.5 hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700/80 bg-slate-900/80 px-6 py-3.5 font-heading text-sm font-semibold text-slate-200 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 hover:bg-slate-800 hover:text-white hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400;
   }
 
   .tech-pill {
-    @apply rounded-full border border-brand-blue/15 bg-brand-blue/5 px-3 py-1 font-mono text-xs text-brand-blue-dark;
+    @apply rounded-md border border-cyan-500/20 bg-cyan-950/30 px-2.5 py-1 font-mono text-xs text-cyan-300 hover:border-cyan-400/40 transition-colors;
   }
 }
 
@@ -77,6 +87,6 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #06b6d4;
   outline-offset: 2px;
 }

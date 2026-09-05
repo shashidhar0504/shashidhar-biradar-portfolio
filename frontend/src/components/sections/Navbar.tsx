@@ -1,104 +1,154 @@
-import { useEffect, useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, MessageSquare, FileText } from "lucide-react";
+import { profile } from "../../data/portfolio";
 
-const NAV_LINKS = [
-  { to: "about", label: "About" },
-  { to: "skills", label: "Skills" },
-  { to: "projects", label: "Projects" },
-  { to: "experience", label: "Experience" },
-  { to: "education", label: "Education" },
-  { to: "contact", label: "Contact" },
+const navLinks = [
+  { name: "About", href: "#about" },
+  { name: "Capabilities", href: "#capabilities" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "AI & Automation", href: "#ai-automation" },
+  { name: "Experience", href: "#experience" },
+  { name: "Workflow", href: "#workflow" },
+  { name: "Services", href: "#services" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      // Section intersection detection
+      const sections = navLinks.map((link) => link.href.substring(1));
+      for (const sectionId of sections.reverse()) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 120) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "glass shadow-soft py-3" : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#0B0F17]/85 backdrop-blur-xl border-b border-slate-800/80 py-3 shadow-lg"
+          : "bg-transparent py-5"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-24">
-        <ScrollLink
-          to="home"
-          smooth
-          duration={500}
-          className="flex cursor-pointer items-center gap-2 font-heading text-lg font-semibold text-ink-900"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-blue text-white">
-            <Code2 size={18} />
-          </span>
-          Shashidhar<span className="text-brand-blue">.dev</span>
-        </ScrollLink>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-12">
+        {/* Brand Logo */}
+        <a href="#hero" className="flex items-center gap-2.5 group">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 font-mono font-bold text-white shadow-glow-cyan transition-transform group-hover:scale-105">
+            SB
+          </div>
+          <div>
+            <span className="font-heading text-base font-bold text-white tracking-tight flex items-center gap-1">
+              Shashidhar Biradar
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+            </span>
+            <span className="block text-[10px] font-mono text-cyan-400">Full Stack & AI Engineer</span>
+          </div>
+        </a>
 
-        <div className="hidden items-center gap-9 md:flex">
-          {NAV_LINKS.map((link) => (
-            <ScrollLink
-              key={link.to}
-              to={link.to}
-              smooth
-              duration={500}
-              offset={-80}
-              spy
-              activeClass="text-brand-blue"
-              className="cursor-pointer text-sm font-medium text-ink-700 transition-colors hover:text-brand-blue"
-            >
-              {link.label}
-            </ScrollLink>
-          ))}
-          <ScrollLink to="contact" smooth duration={500} offset={-80}>
-            <button className="rounded-full bg-brand-blue px-5 py-2.5 text-sm font-medium text-white shadow-glow transition-all hover:bg-brand-blue-dark hover:-translate-y-0.5">
-              Hire Me
-            </button>
-          </ScrollLink>
+        {/* Desktop Nav Links */}
+        <nav className="hidden lg:flex items-center gap-1 rounded-full bg-slate-900/80 border border-slate-800 p-1.5 backdrop-blur-md">
+          {navLinks.map((link) => {
+            const sectionId = link.href.substring(1);
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`rounded-full px-3.5 py-1.5 font-heading text-xs font-semibold transition-all duration-200 ${
+                  isActive
+                    ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm"
+                    : "text-slate-300 hover:text-white hover:bg-slate-800/60"
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
+        </nav>
+
+        {/* Actions (Resume & Let's Talk) */}
+        <div className="hidden sm:flex items-center gap-3">
+          <a
+            href={profile.resumeFile}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-2 text-xs font-semibold text-slate-200 hover:border-cyan-500/50 hover:text-white transition-colors"
+          >
+            <FileText className="h-3.5 w-3.5 text-cyan-400" />
+            Resume
+          </a>
+
+          <a href="#contact" className="btn-primary py-2 px-4 text-xs shadow-none">
+            <MessageSquare className="h-3.5 w-3.5" />
+            Let's Talk
+          </a>
         </div>
 
+        {/* Mobile Menu Trigger */}
         <button
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-          className="rounded-lg p-2 text-ink-900 md:hidden"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden rounded-xl border border-slate-800 bg-slate-900 p-2.5 text-slate-300 hover:text-white"
+          aria-label="Toggle Navigation Menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
-      </nav>
+      </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="glass mx-6 mt-3 overflow-hidden rounded-2xl md:hidden"
-          >
-            <div className="flex flex-col gap-1 p-4">
-              {NAV_LINKS.map((link) => (
-                <ScrollLink
-                  key={link.to}
-                  to={link.to}
-                  smooth
-                  duration={500}
-                  offset={-80}
-                  onClick={() => setOpen(false)}
-                  className="cursor-pointer rounded-lg px-3 py-2.5 text-sm font-medium text-ink-700 transition-colors hover:bg-brand-blue/5 hover:text-brand-blue"
-                >
-                  {link.label}
-                </ScrollLink>
-              ))}
+      {/* Mobile Navigation Drawer */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden glass-panel border-b border-slate-800 px-6 py-6 animate-in slide-in-from-top-4 duration-200">
+          <div className="flex flex-col space-y-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-xl px-4 py-2.5 font-heading text-sm font-semibold text-slate-200 hover:bg-slate-800 hover:text-cyan-400 transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+            <div className="pt-4 border-t border-slate-800 flex flex-col gap-3">
+              <a
+                href={profile.resumeFile}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 rounded-xl border border-slate-700 py-3 text-xs font-semibold text-slate-200"
+              >
+                <FileText className="h-4 w-4 text-cyan-400" />
+                View Resume PDF
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="btn-primary w-full justify-center py-3 text-xs"
+              >
+                Let's Talk
+              </a>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

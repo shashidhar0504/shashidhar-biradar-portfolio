@@ -1,87 +1,152 @@
-import { Link as ScrollLink } from "react-scroll";
-import { ArrowUp, Github, Linkedin, Mail, Code2 } from "lucide-react";
+import { Github, Linkedin, Mail, MessageSquare, Phone, ArrowUp } from "lucide-react";
 import { profile } from "../../data/portfolio";
 
-const QUICK_LINKS = [
-  { to: "about", label: "About" },
-  { to: "skills", label: "Skills" },
-  { to: "projects", label: "Projects" },
-  { to: "contact", label: "Contact" },
-];
-
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const defaultWhatsappMsg = encodeURIComponent(
+    "Hello Shashidhar, I visited your portfolio and would like to discuss an opportunity/project."
+  );
+
   return (
-    <footer className="relative border-t border-ink-900/5 bg-surface px-6 pb-10 pt-16 sm:px-10 lg:px-24">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 text-center">
-        <ScrollLink
-          to="home"
-          smooth
-          duration={500}
-          className="flex cursor-pointer items-center gap-2 font-heading text-lg font-semibold text-ink-900"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-blue text-white">
-            <Code2 size={18} />
-          </span>
-          Shashidhar<span className="text-brand-blue">.dev</span>
-        </ScrollLink>
+    <footer className="relative bg-[#070A0F] text-slate-400 border-t border-slate-800/80 py-12 px-6 lg:px-12">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-800/80 items-start">
+          {/* Left Brand Column */}
+          <div className="md:col-span-6 space-y-4">
+            <a href="#hero" className="flex items-center gap-2.5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 font-mono font-bold text-white shadow-glow-cyan">
+                SB
+              </div>
+              <div>
+                <span className="font-heading text-lg font-bold text-white tracking-tight">
+                  Shashidhar Biradar
+                </span>
+                <span className="block text-xs font-mono text-cyan-400">
+                  Full Stack Java Developer | AI & Automation Engineer
+                </span>
+              </div>
+            </a>
 
-        <div className="flex flex-wrap justify-center gap-6">
-          {QUICK_LINKS.map((link) => (
-            <ScrollLink
-              key={link.to}
-              to={link.to}
-              smooth
-              duration={500}
-              offset={-80}
-              className="cursor-pointer text-sm text-ink-500 transition-colors hover:text-brand-blue"
-            >
-              {link.label}
-            </ScrollLink>
-          ))}
+            <p className="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed">
+              I don't just write code. I build complete digital solutions — from Spring Boot backends and React UIs to intelligent AI workflows and cloud deployments.
+            </p>
+
+            <div className="font-mono text-xs text-slate-300">
+              📍 Based in Pune, Maharashtra, India
+            </div>
+          </div>
+
+          {/* Quick Links Column */}
+          <div className="md:col-span-3 space-y-3">
+            <h4 className="font-heading text-xs font-semibold text-white uppercase tracking-wider">
+              Navigation
+            </h4>
+            <ul className="space-y-2 text-xs font-mono">
+              <li>
+                <a href="#about" className="hover:text-cyan-400 transition-colors">
+                  About & Background
+                </a>
+              </li>
+              <li>
+                <a href="#capabilities" className="hover:text-cyan-400 transition-colors">
+                  Capability Map
+                </a>
+              </li>
+              <li>
+                <a href="#skills" className="hover:text-cyan-400 transition-colors">
+                  Skill Ecosystem
+                </a>
+              </li>
+              <li>
+                <a href="#projects" className="hover:text-cyan-400 transition-colors">
+                  Featured Projects
+                </a>
+              </li>
+              <li>
+                <a href="#ai-automation" className="hover:text-cyan-400 transition-colors">
+                  AI & Automation Journey
+                </a>
+              </li>
+              <li>
+                <a href="#workflow" className="hover:text-cyan-400 transition-colors">
+                  Development Workflow
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-cyan-400 transition-colors">
+                  Contact Me
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Direct Social / Action Column */}
+          <div className="md:col-span-3 space-y-3">
+            <h4 className="font-heading text-xs font-semibold text-white uppercase tracking-wider">
+              Connect Directly
+            </h4>
+            <div className="flex flex-col space-y-2 text-xs font-mono">
+              <a
+                href={`https://wa.me/${profile.whatsappNumber}?text=${defaultWhatsappMsg}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-emerald-400 hover:underline"
+              >
+                <MessageSquare className="h-4 w-4" />
+                WhatsApp Direct Chat
+              </a>
+
+              <a href={`tel:${profile.phone}`} className="flex items-center gap-2 hover:text-white">
+                <Phone className="h-4 w-4 text-cyan-400" />
+                {profile.phone}
+              </a>
+
+              <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-white">
+                <Mail className="h-4 w-4 text-cyan-400" />
+                {profile.email}
+              </a>
+
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-white"
+              >
+                <Github className="h-4 w-4 text-cyan-400" />
+                GitHub Profile
+              </a>
+
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-white"
+              >
+                <Linkedin className="h-4 w-4 text-cyan-400" />
+                LinkedIn Profile
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="flex gap-3">
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-ink-900/10 text-ink-700 transition-all hover:border-brand-blue hover:text-brand-blue"
-          >
-            <Github size={16} />
-          </a>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-ink-900/10 text-ink-700 transition-all hover:border-brand-blue hover:text-brand-blue"
-          >
-            <Linkedin size={16} />
-          </a>
-          <a
-            href={`mailto:${profile.email}`}
-            aria-label="Email"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-ink-900/10 text-ink-700 transition-all hover:border-brand-blue hover:text-brand-blue"
-          >
-            <Mail size={16} />
-          </a>
-        </div>
+        {/* Bottom Copyright & Back to Top Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+          <p>© 2026 Shashidhar Biradar. All rights reserved.</p>
+          <p className="text-slate-300">Designed & built with code, curiosity, and continuous learning.</p>
 
-        <p className="text-xs text-ink-500">
-          © {new Date().getFullYear()} {profile.name}. All rights reserved.
-        </p>
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-1.5 rounded-xl border border-slate-800 bg-slate-900 px-3 py-1.5 text-slate-300 hover:text-white hover:border-cyan-500/50 transition-colors"
+            aria-label="Back to top"
+          >
+            <ArrowUp className="h-3.5 w-3.5 text-cyan-400" />
+            Top
+          </button>
+        </div>
       </div>
-
-      <ScrollLink
-        to="home"
-        smooth
-        duration={500}
-        aria-label="Back to top"
-        className="fixed bottom-7 right-7 z-40 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-brand-blue text-white shadow-glow transition-all hover:-translate-y-1 hover:bg-brand-blue-dark"
-      >
-        <ArrowUp size={20} />
-      </ScrollLink>
     </footer>
   );
 }
