@@ -32,7 +32,15 @@ export default function Contact() {
     setErrorMessage("");
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      let apiUrl = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
+      if (!apiUrl) {
+        if (typeof window !== "undefined" && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+          apiUrl = "";
+        } else {
+          apiUrl = "http://localhost:5000";
+        }
+      }
+
       const res = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -41,7 +49,7 @@ export default function Contact() {
 
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
-        throw new Error(errorData.message || "Failed to send message.");
+        throw new Error(errorData.message || "Server error occurred while sending message.");
       }
 
       setStatus("success");
@@ -56,7 +64,11 @@ export default function Contact() {
     } catch (err: any) {
       console.error("Contact Form Error:", err);
       setStatus("error");
-      setErrorMessage(err.message || "Network error. Please try direct WhatsApp or Email below.");
+      if (err.message && err.message.includes("Failed to fetch")) {
+        setErrorMessage("Backend mail server is offline or unreachable right now. Please use the direct WhatsApp or Email buttons below to deliver your message instantly!");
+      } else {
+        setErrorMessage(err.message || "Network error. Please use direct WhatsApp or Email options below.");
+      }
     }
   };
 
@@ -276,9 +288,33 @@ export default function Contact() {
               )}
 
               {status === "error" && (
-                <div className="flex items-center gap-2 rounded-xl bg-rose-50 p-4 border border-rose-200 text-rose-800 text-xs font-mono">
-                  <AlertCircle className="h-5 w-5 shrink-0 text-rose-600" />
-                  <span>{errorMessage}</span>
+                <div className="flex flex-col gap-3 rounded-xl bg-rose-50 p-4 border border-rose-200 text-rose-800 text-xs font-mono">
+                  <div className="flex items-center gap-2">
+                    <AlertCircle className="h-5 w-5 shrink-0 text-rose-600" />
+                    <span>{errorMessage}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <a
+                      href={`https://wa.me/${profile.whatsappNumber}?text=${encodeURIComponent(
+                        `Hi Shashidhar!\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nMessage: ${formData.message}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-emerald-600 text-white font-sans text-xs font-bold hover:bg-emerald-700 transition-colors shadow-sm"
+                    >
+                      <MessageSquare className="h-4 w-4" />
+                      Send via WhatsApp Instead ↗
+                    </a>
+                    <a
+                      href={`mailto:${profile.email}?subject=${encodeURIComponent(`Inquiry: ${formData.projectType}`)}&body=${encodeURIComponent(
+                        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nMessage: ${formData.message}`
+                      )}`}
+                      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-600 text-white font-sans text-xs font-bold hover:bg-blue-700 transition-colors shadow-sm"
+                    >
+                      <Mail className="h-4 w-4" />
+                      Send via Direct Email ↗
+                    </a>
+                  </div>
                 </div>
               )}
 
