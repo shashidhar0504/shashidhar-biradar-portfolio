@@ -8,8 +8,7 @@ export const profile = {
   roles: [
     "Full Stack Java Developer",
     "AI & Automation Engineer",
-    "Spring Boot Specialist",
-    "React Developer",
+    "Spring Boot & React Specialist",
     "Backend Developer",
     "Technical Solution Builder",
   ],
@@ -22,7 +21,7 @@ export const profile = {
   resumeFile: "/resume.pdf",
   profileImage: "/profile.jpg",
   tagline:
-    "I don't just write code. I build complete digital solutions — from robust Java/Spring Boot backends and React UIs to intelligent AI workflows, automated integrations, and production cloud deployments.",
+    "I build complete digital solutions — from UI/UX and full-stack development to AI integration, automation, APIs, third-party integrations, and production cloud deployment.",
   status: "Available for Full-Time Opportunities & Client Projects",
   languagesSpoken: [
     "English",
@@ -37,14 +36,14 @@ export const profile = {
 export const about = {
   headline: "Building production-ready software with Java engineering, AI capabilities, and end-to-end SDLC ownership.",
   paragraphs: [
-    "I'm a Full Stack Java Developer and AI & Automation Engineer with hands-on experience crafting scalable, secure web platforms and intelligent business systems. My core engineering foundation centers on Java, Spring Boot, Spring Security, Hibernate/JPA, MySQL, and React.js.",
+    "I'm a Full Stack Java Developer and AI & Automation Engineer with hands-on experience crafting scalable, secure web platforms, business digital storefronts, and intelligent business systems. My core engineering foundation centers on Java, Spring Boot, Spring Security, Hibernate/JPA, MySQL, and React.js.",
     "I take complete ownership of the software development lifecycle — from initial requirement discovery, architecture design, and database normalization to REST API development, third-party payment/communication integrations, automated workflows, and production deployment.",
-    "Beyond traditional software architecture, I integrate modern AI models, LLM APIs, and automated communication triggers into business applications, turning complex requirements into seamless, client-focused digital products.",
+    "Beyond traditional software architecture, I integrate modern AI models, LLM APIs, and automated communication triggers into business applications across diverse industries — turning complex requirements into seamless, client-focused digital products.",
   ],
   highlights: [
-    { label: "End-to-End Ownership", value: "Requirements to Cloud Deployment" },
+    { label: "End-to-End Ownership", value: "Requirements → Design → Dev → Cloud Launch" },
     { label: "Core Stack", value: "Java · Spring Boot · React · AI & Automation" },
-    { label: "Current Focus", value: "Full Stack Engineering & Intelligent Solutions" },
+    { label: "Academic Excellence", value: "9.17 CGPA (BCA Graduate 2026)" },
   ],
 };
 
@@ -79,7 +78,7 @@ export const capabilities: CapabilityCategory[] = [
     title: "AI & Intelligent Systems",
     subtitle: "AI Integrations & Workflow Enhancement",
     iconName: "BrainCircuit",
-    technologies: ["LLM API Integration", "AI Workflows", "Intelligent Automation", "Prompt Engineering", "AI-assisted Business Solutions"],
+    technologies: ["LLM API Integration", "AI-assisted Workflows", "Intelligent Automation", "Prompt Engineering", "AI-enhanced Web Applications"],
     description: "Enhancing traditional applications with intelligent natural language interfaces, automated content pipelines, and AI API integrations.",
   },
   {
@@ -95,7 +94,7 @@ export const capabilities: CapabilityCategory[] = [
     title: "Third-Party Integrations",
     subtitle: "Payments, Communication & APIs",
     iconName: "Layers",
-    technologies: ["Razorpay Integration", "WhatsApp Chat", "Nodemailer / SMTP", "Third-Party REST APIs", "OAuth & Security Tokens"],
+    technologies: ["Razorpay Integration", "WhatsApp Direct Chat", "Nodemailer / SMTP", "Third-Party REST APIs", "OAuth & Security Tokens"],
     description: "Seamlessly connecting production platforms to payment gateways, customer support tools, and external cloud services.",
   },
   {
@@ -170,7 +169,7 @@ export type CaseStudy = {
 export type Project = {
   id: string;
   title: string;
-  category: "Full Stack" | "Production" | "AI & Automation" | "Client Project" | "Academic";
+  category: "Full Stack" | "Production" | "AI & Automation" | "Automation" | "Client Work" | "Business Websites" | "E-Commerce" | "Academic";
   filterCategories: string[];
   description: string;
   techStack: string[];
@@ -188,7 +187,7 @@ export const projects: Project[] = [
     id: "universalurja",
     title: "UniversalUrja Platform",
     category: "Production",
-    filterCategories: ["All", "Full Stack", "Production", "Client Project"],
+    filterCategories: ["All", "Full Stack", "Production", "Client Work", "E-Commerce"],
     description:
       "A production-ready full-stack e-commerce and wellness platform supporting online sales, course bookings, consultation scheduling, Razorpay payments, and administrative workflows.",
     techStack: [
@@ -198,7 +197,6 @@ export const projects: Project[] = [
       "Hibernate/JPA",
       "MySQL",
       "React.js",
-      "JavaScript",
       "REST APIs",
       "JWT",
       "Razorpay",
@@ -242,10 +240,165 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "ai-automation-business-suite",
+    id: "manasa-gift-studio",
+    title: "Manasa's Gift Studio",
+    category: "E-Commerce",
+    filterCategories: ["All", "Client Work", "E-Commerce", "Business Websites"],
+    description:
+      "A premium digital storefront experience engineered for personalized hampers, curated gift boxes, and corporate gifting with interactive Quick Views and direct WhatsApp lead conversion.",
+    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Vercel", "WhatsApp API", "Framer Motion"],
+    highlights: [
+      "Designed conversion-optimized Build Your Hamper & product quick-view interface",
+      "Integrated instant WhatsApp checkout routing custom gift specifications to business owner",
+      "Mobile-first responsive UX optimized for social media ad traffic conversion",
+      "Deployed live on Vercel high-availability CDN",
+    ],
+    liveUrl: "https://manasa-gift-studio.vercel.app/",
+    isProduction: true,
+    myContribution: "Full UI/UX design, frontend development, product presentation showcase, WhatsApp conversion routing, and Vercel cloud deployment.",
+    featured: true,
+    caseStudy: {
+      challenge: "The client needed an elegant digital storefront to showcase custom hampers and corporate gifting options without requiring a complex, expensive backend for initial launch.",
+      solution: "Created a modern, high-conversion React storefront featuring dynamic product quick views, occasion filtering, and automated WhatsApp order specification routing.",
+      architecture: ["React/TypeScript Single-Page Application", "Tailwind CSS Styling Engine", "WhatsApp Order Generator", "Vercel CDN Infrastructure"],
+      features: [
+        "Curated hamper showcase & corporate gifting portal",
+        "Interactive product quick view modal with item customization",
+        "Direct WhatsApp order dispatch with pre-filled hamper details",
+        "Occasion & category filtering UI",
+      ],
+      integrations: ["WhatsApp Business API Direct Links", "Vercel Analytics"],
+      deployment: "Production deployment on Vercel with automatic GitHub continuous integration.",
+      outcome: "Enabled client to accept direct custom gift orders through WhatsApp with zero checkout friction.",
+    },
+  },
+  {
+    id: "v-technologies",
+    title: "V Technologies Business Platform",
+    category: "Business Websites",
+    filterCategories: ["All", "Client Work", "Business Websites"],
+    description:
+      "A professional business presence and lead generation platform designed to build market credibility, present B2B services, and drive direct client inquiries.",
+    techStack: ["React.js", "JavaScript", "Tailwind CSS", "WhatsApp API", "Email Automation", "Vercel"],
+    highlights: [
+      "Engineered conversion funnel connecting website visitors to direct WhatsApp & phone consultation",
+      "Optimized business service presentation and IndiaMART/LinkedIn cross-channel links",
+      "Integrated responsive contact forms with automated email alerts",
+    ],
+    isProduction: true,
+    myContribution: "End-to-end website design, service architecture, lead generation integration, and domain/cloud deployment.",
+    featured: true,
+    caseStudy: {
+      challenge: "V Technologies needed a credible, modern web presence to convert business inquiries from LinkedIn and B2B directories into qualified leads.",
+      solution: "Engineered a sleek corporate portal highlighting technical services, client trust signals, and multi-channel contact options.",
+      architecture: ["React Frontend Component Hierarchy", "Tailwind Design System", "Lead Routing Module", "Vercel Hosting"],
+      features: [
+        "B2B service capability showcase",
+        "Multi-channel lead conversion (WhatsApp, Phone, Email)",
+        "Social & directory link integration (LinkedIn, IndiaMART)",
+        "Mobile-optimized responsive architecture",
+      ],
+      integrations: ["WhatsApp Business API", "Email Notifications", "Directory Cross-Linking"],
+      deployment: "Vercel cloud production hosting.",
+      outcome: "Elevated brand credibility and streamlined B2B client inquiry acquisition.",
+    },
+  },
+  {
+    id: "ca-shailesh",
+    title: "CA Shailesh & Co. Platform",
+    category: "Business Websites",
+    filterCategories: ["All", "Client Work", "Business Websites"],
+    description:
+      "A professional services web platform built for a Chartered Accountancy firm, highlighting taxation, auditing, business advisory services, and consultation scheduling.",
+    techStack: ["React.js", "TypeScript", "Tailwind CSS", "WhatsApp API", "Call Direct"],
+    highlights: [
+      "Structured financial & tax advisory service directory",
+      "Integrated direct phone call & WhatsApp consultation triggers",
+      "Clean, professional corporate design instilling financial trust",
+    ],
+    isProduction: true,
+    myContribution: "Full lifecycle development: requirement discovery, UI layout, service copy structuring, and deployment.",
+    featured: true,
+    caseStudy: {
+      challenge: "The CA firm required an authoritative digital presence to allow clients to view tax advisory services and request consultations directly.",
+      solution: "Developed a clean, professional web portal featuring structured service breakdowns and instant contact options.",
+      architecture: ["React Single Page Application", "Responsive Layout Engine", "Direct Action Handler"],
+      features: [
+        "Taxation & Audit service directory",
+        "Direct appointment booking call-to-action buttons",
+        "WhatsApp instant consultation starter",
+      ],
+      integrations: ["WhatsApp API", "Direct Tel Triggers"],
+      deployment: "Cloud web hosting deployment.",
+      outcome: "Established a professional digital front for client acquisition and consultation scheduling.",
+    },
+  },
+  {
+    id: "solar-website",
+    title: "Solar & Renewable Energy Solution",
+    category: "Business Websites",
+    filterCategories: ["All", "Client Work", "Business Websites"],
+    description:
+      "An industry-specific web application built for a solar energy provider to present residential/commercial solar installations, savings calculators, and quote requests.",
+    techStack: ["React.js", "JavaScript", "Tailwind CSS", "WhatsApp API", "Form Engine"],
+    highlights: [
+      "Interactive solar service showcase for residential and commercial clients",
+      "Lead generation quote form routing inquiries to WhatsApp & Email",
+      "Mobile-friendly responsive layout with high-contrast renewable theme",
+    ],
+    isProduction: true,
+    myContribution: "Designed UI/UX, built interactive solar product showcase, implemented lead routing, and deployed.",
+    featured: false,
+    caseStudy: {
+      challenge: "Solar installation buyers need clear information on system capacity, benefits, and an easy way to request site surveys.",
+      solution: "Built a conversion-focused renewable energy portal highlighting installation steps and quote request channels.",
+      architecture: ["React UI Component Framework", "Form Validation Engine", "WhatsApp Lead Router"],
+      features: [
+        "Solar installation service showcase",
+        "Instant quote request lead form",
+        "WhatsApp & call quick connect triggers",
+      ],
+      integrations: ["WhatsApp Lead Capture", "Email Notification"],
+      deployment: "Production web server hosting.",
+      outcome: "Streamlined solar consultation requests and improved customer inquiry response time.",
+    },
+  },
+  {
+    id: "vlbvn",
+    title: "VLBVN Organization Platform",
+    category: "Automation",
+    filterCategories: ["All", "Automation", "Client Work", "Business Websites"],
+    description:
+      "A modern organizational platform designed to streamline community information architecture, member engagement, and automated event notification workflows.",
+    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Vercel", "Automation Scripts"],
+    highlights: [
+      "Clean information architecture for organizational programs & events",
+      "Automated notification triggers for user engagement",
+      "Deployed live on Vercel with high performance score",
+    ],
+    liveUrl: "https://vlbvn.vercel.app/",
+    isProduction: true,
+    myContribution: "UI/UX design, frontend implementation, information architecture, and Vercel cloud deployment.",
+    featured: false,
+    caseStudy: {
+      challenge: "The organization needed a clean digital portal to communicate announcements and manage member interactions effectively.",
+      solution: "Engineered a fast, responsive React platform with structured program sections and automated engagement links.",
+      architecture: ["React Component Tree", "Tailwind Styling System", "Vercel Infrastructure"],
+      features: [
+        "Program & announcement showcase",
+        "Interactive member navigation",
+        "Automated communication channels",
+      ],
+      integrations: ["Vercel Deployment Pipeline", "Social Connect"],
+      deployment: "Live production deployment on Vercel.",
+      outcome: "Improved organizational communication and digital outreach.",
+    },
+  },
+  {
+    id: "ai-automation-lead-solution",
     title: "AI & Automation Lead Solution",
     category: "AI & Automation",
-    filterCategories: ["All", "AI & Automation", "Client Project", "Full Stack"],
+    filterCategories: ["All", "AI & Automation", "Client Work", "Full Stack"],
     description:
       "An intelligent, automated lead-capture and business communication solution designed to convert web traffic into qualified leads via automated WhatsApp triggers and smart email notifications.",
     techStack: [
@@ -260,14 +413,13 @@ export const projects: Project[] = [
     ],
     highlights: [
       "Automated lead capture routing customer requests directly to WhatsApp & Email",
-      "AI-assisted response generation for quick client engagement",
-      "Responsive conversion-focused digital storefront interface",
+      "AI-assisted response drafting for rapid client inquiry follow-ups",
       "Integrated Nodemailer backend for instant email notifications to business owner",
     ],
     githubUrl: "https://github.com/shashidharbiradar",
     isProduction: true,
     myContribution: "Designed & developed frontend, backend email triggers, WhatsApp automation workflow, and deployment.",
-    featured: true,
+    featured: false,
     caseStudy: {
       challenge: "Small business clients often lose potential leads due to delayed follow-ups and complex contact forms that lack instant messaging access.",
       solution: "Built a conversion-engineered web solution featuring pre-filled WhatsApp action triggers, automated email dispatchers, and AI-assisted client inquiry routing.",
@@ -304,7 +456,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/shashidharbiradar",
     isProduction: false,
     myContribution: "Full design and implementation of Java Servlets backend, MySQL database queries, and JSP user interfaces.",
-    featured: true,
+    featured: false,
     caseStudy: {
       challenge: "Lack of a transparent, trackable system for citizens to register municipal complaints and monitor resolution progress.",
       solution: "Developed an end-to-end Java web application utilizing MVC pattern (JSP views, Servlet controllers, MySQL model) to manage complaint lifecycles.",
@@ -328,7 +480,7 @@ export const projects: Project[] = [
 
 export const experience = [
   {
-    role: "Freelance Full Stack Developer & Solution Builder",
+    role: "Freelance Full Stack Developer & Technical Solution Builder",
     company: "Independent Technical Contractor (Remote)",
     period: "May 2026 – Present",
     type: "Freelance / Client Engineering",
@@ -336,6 +488,7 @@ export const experience = [
       "Own full software development lifecycle (SDLC) for client applications from initial requirements gathering to final production cloud deployment.",
       "Architect and build robust Java & Spring Boot backend micro-services, REST APIs, Spring Security authentication, and MySQL databases.",
       "Develop modern, responsive frontends with React.js, TypeScript, and Tailwind CSS focusing on visual excellence and conversion UX.",
+      "Deliver industry-specific digital solutions for e-commerce, professional services, renewable energy, and corporate B2B clients.",
       "Implement third-party business integrations including Razorpay payment gateways, WhatsApp Business API chat triggers, and automated email services.",
       "Incorporate AI APIs, LLM workflows, and intelligent automation into client solutions to streamline business operations.",
       "Manage version control with Git/GitHub, perform performance optimization, and provide continuous production support.",
@@ -372,7 +525,7 @@ export const aiAutomationSteps = [
     step: "03",
     title: "Production Delivery",
     subtitle: "Real Client Platforms",
-    description: "Engineered and deployed production platforms like UniversalUrja, handling live sales, bookings, and payments.",
+    description: "Engineered and deployed production platforms like UniversalUrja and Manasa's Gift Studio, handling sales, bookings, and payments.",
     icon: "Rocket",
   },
   {
@@ -457,8 +610,8 @@ export const services = [
     tags: ["AI APIs", "Prompt Engineering", "Intelligent Workflows"],
   },
   {
-    title: "Business & Client Websites",
-    description: "High-conversion, mobile-optimized digital storefronts and professional landing pages designed for growth.",
+    title: "Business & Client Digital Storefronts",
+    description: "High-conversion, mobile-optimized digital storefronts, e-commerce hampers, and professional landing pages.",
     icon: "Globe",
     tags: ["React", "TypeScript", "Tailwind CSS"],
   },
@@ -519,10 +672,10 @@ export const education = [
   {
     degree: "Bachelor of Computer Applications (BCA)",
     institution: "Sarhad College of Arts, Commerce and Science",
-    period: "Expected April 2026",
+    period: "Graduating 2026",
     details: [
-      "CGPA: 9.42 (1st Year), 9.14 (2nd Year), 9.0+ (3rd Year expected)",
-      "Core Coursework: Programming Fundamentals, Object-Oriented Java, Database Management (DBMS), Web Engineering, Software Architecture",
+      "Cumulative Grade Point Average (CGPA): 9.17",
+      "Core Coursework: Programming Fundamentals, Object-Oriented Java, Database Management Systems (DBMS), Web Engineering, Software Architecture",
     ],
   },
   {
@@ -534,17 +687,18 @@ export const education = [
 ];
 
 export const stats = [
-  { label: "Major Projects Delivered", value: 2, suffix: "+" },
-  { label: "Full-Stack Layers Owned", value: 3, suffix: "" },
-  { label: "Languages Spoken", value: 6, suffix: "" },
-  { label: "Years Building", value: 2, suffix: "+" },
+  { label: "BCA CGPA", value: "9.17", suffix: "" },
+  { label: "Digital / Dev Projects", value: "8", suffix: "+" },
+  { label: "Client & Business Solutions", value: "5", suffix: "+" },
+  { label: "Languages Spoken", value: "6", suffix: "" },
+  { label: "Years Building Stack", value: "2", suffix: "+" },
 ];
 
 export const achievements = [
+  "Maintained outstanding academic record with a 9.17 CGPA in Bachelor of Computer Applications (BCA)",
   "Independently designed, developed, and deployed full-stack production platforms end-to-end (Java, Spring Boot, React, MySQL)",
-  "Successfully integrated secure JWT-based authentication and Spring Security into live web applications",
-  "Integrated Razorpay payment gateway and WhatsApp-based customer support into a production e-commerce platform",
+  "Delivered client & business projects across diverse domains: E-commerce, Gifting, Professional Services, Solar, and Organizations",
+  "Integrated Razorpay payment gateway and WhatsApp-based customer support into live production platforms",
   "Optimized application load times and resolved backend bottlenecks through efficient database querying and indexing",
   "Recommended digital tools and trained 5+ employees during internship, boosting onboarding speed and productivity",
-  "Managed client engagements from initial requirement discovery through to cloud deployment and ongoing maintenance",
 ];

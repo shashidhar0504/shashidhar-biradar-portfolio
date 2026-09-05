@@ -80,8 +80,8 @@ export default function About() {
                 <span className="text-[11px] font-mono text-slate-400">Graduating 2026</span>
               </div>
               <div className="glass-card rounded-2xl p-4 text-center">
-                <span className="block text-2xl font-extrabold text-emerald-400 font-mono">9.42</span>
-                <span className="text-[11px] font-mono text-slate-400">1st Year CGPA</span>
+                <span className="block text-2xl font-extrabold text-emerald-400 font-mono">9.17</span>
+                <span className="text-[11px] font-mono text-slate-400">BCA CGPA</span>
               </div>
               <div className="glass-card rounded-2xl p-4 text-center">
                 <span className="block text-2xl font-extrabold text-blue-400 font-mono">6</span>

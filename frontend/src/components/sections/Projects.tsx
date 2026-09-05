@@ -7,7 +7,7 @@ export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const filters = ["All", "Full Stack", "Production", "AI & Automation", "Client Project", "Academic"];
+  const filters = ["All", "Full Stack", "AI & Automation", "Client Work", "Business Websites", "E-Commerce", "Production", "Academic"];
 
   const filteredProjects = projects.filter((p) => {
     if (activeFilter === "All") return true;
