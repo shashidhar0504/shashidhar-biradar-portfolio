@@ -285,6 +285,7 @@ export const projects: Project[] = [
       "Optimized business service presentation and IndiaMART/LinkedIn cross-channel links",
       "Integrated responsive contact forms with automated email alerts",
     ],
+    liveUrl: "https://v-technologies.vercel.app/",
     isProduction: true,
     myContribution: "End-to-end website design, service architecture, lead generation integration, and domain/cloud deployment.",
     featured: true,
