@@ -44,14 +44,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/85 backdrop-blur-xl border-b border-slate-200/80 py-3 shadow-soft"
+          ? "bg-white/85 backdrop-blur-xl border-b border-slate-200/80 py-3 shadow-md"
           : "bg-transparent py-5"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-12">
         {/* Brand Logo */}
         <a href="#hero" className="flex items-center gap-2.5 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 font-mono font-bold text-white shadow-glow transition-transform group-hover:scale-105">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 font-mono font-bold text-white shadow-md shadow-blue-500/20 transition-transform group-hover:scale-105">
             SB
           </div>
           <div>
@@ -64,7 +64,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center gap-1 rounded-full bg-white/90 border border-slate-200 p-1.5 backdrop-blur-md shadow-soft">
+        <nav className="hidden lg:flex items-center gap-1 rounded-full bg-white/90 border border-slate-200 p-1.5 backdrop-blur-md shadow-sm">
           {navLinks.map((link) => {
             const sectionId = link.href.substring(1);
             const isActive = activeSection === sectionId;

@@ -332,7 +332,7 @@ export default function FloatingChatbot() {
       {/* Floating Trigger Button */}
       <div className="group relative flex items-center">
         {!isOpen && (
-          <span className="pointer-events-none absolute right-16 whitespace-nowrap rounded-lg bg-white px-3 py-1.5 font-mono text-xs font-semibold text-blue-600 opacity-0 shadow-soft border border-slate-200 transition-opacity duration-200 group-hover:opacity-100 flex items-center gap-1.5">
+          <span className="pointer-events-none absolute right-16 whitespace-nowrap rounded-lg bg-white px-3 py-1.5 font-mono text-xs font-semibold text-blue-600 opacity-0 shadow-md border border-slate-200 transition-opacity duration-200 group-hover:opacity-100 flex items-center gap-1.5">
             <Bot className="h-3.5 w-3.5 text-blue-600" />
             AI Portfolio Assistant
           </span>
@@ -340,7 +340,7 @@ export default function FloatingChatbot() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 text-white shadow-glow transition-transform duration-300 hover:scale-110 active:scale-95"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 text-white shadow-lg shadow-blue-500/30 transition-transform duration-300 hover:scale-110 active:scale-95"
           aria-label="Toggle AI assistant chatbot"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Bot className="h-7 w-7 animate-pulse" />}

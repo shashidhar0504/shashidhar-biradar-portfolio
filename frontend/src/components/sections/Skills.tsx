@@ -107,7 +107,7 @@ export default function Skills() {
             return (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-5 hover:scale-[1.02] transition-all duration-300 group flex flex-col justify-between bg-white border border-slate-200 shadow-soft"
+                className="glass-card rounded-2xl p-5 hover:scale-[1.02] transition-all duration-300 group flex flex-col justify-between bg-white border border-slate-200 shadow-md shadow-slate-200/50"
               >
                 <div>
                   <div className="flex items-start justify-between gap-3 mb-3">

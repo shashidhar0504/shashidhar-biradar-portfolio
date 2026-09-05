@@ -32,12 +32,12 @@ export default function CommandCenter() {
 
       {/* Central Command Core Card */}
       <div
-        className="relative z-10 glass-panel rounded-3xl p-6 border border-slate-200 shadow-card text-center transition-transform duration-300 ease-out bg-white"
+        className="relative z-10 glass-panel rounded-3xl p-6 border border-slate-200 shadow-xl text-center transition-transform duration-300 ease-out bg-white"
         style={{
           transform: `translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)`,
         }}
       >
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-glow text-white mb-3">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-md shadow-blue-500/20 text-white mb-3">
           <Terminal className="h-7 w-7" />
         </div>
         <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-[11px] font-mono font-semibold text-blue-700 border border-blue-200 mb-2">
@@ -71,7 +71,7 @@ export default function CommandCenter() {
           return (
             <div
               key={i}
-              className={`absolute top-1/2 left-1/2 pointer-events-auto rounded-2xl p-3 backdrop-blur-md border border-slate-200 shadow-soft transition-transform duration-500 ease-out animate-float bg-white/90`}
+              className={`absolute top-1/2 left-1/2 pointer-events-auto rounded-2xl p-3 backdrop-blur-md border border-slate-200 shadow-md shadow-slate-200/50 transition-transform duration-500 ease-out animate-float bg-white/90`}
               style={{
                 transform: `translate(calc(-50% + ${node.posX}px + ${mousePos.x * (i % 2 === 0 ? 0.8 : -0.8)}px), calc(-50% + ${node.posY}px + ${mousePos.y * (i % 2 === 0 ? 0.8 : -0.8)}px))`,
                 animationDelay: `${i * 0.8}s`,

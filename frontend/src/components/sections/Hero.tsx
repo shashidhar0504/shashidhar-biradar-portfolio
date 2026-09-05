@@ -77,7 +77,7 @@ export default function Hero() {
           </div>
 
           {/* Brand Promise Card */}
-          <div className="rounded-2xl bg-white border border-slate-200 p-4 max-w-xl shadow-soft flex items-center gap-3">
+          <div className="rounded-2xl bg-white border border-slate-200 p-4 max-w-xl shadow-sm flex items-center gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
               <Sparkles className="h-5 w-5" />
             </div>

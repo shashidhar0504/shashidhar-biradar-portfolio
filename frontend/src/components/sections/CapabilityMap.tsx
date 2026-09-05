@@ -49,7 +49,7 @@ export default function CapabilityMap() {
                   onClick={() => setSelectedId(cap.id)}
                   className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between group ${
                     isSelected
-                      ? "bg-white border-blue-500 shadow-soft"
+                      ? "bg-white border-blue-500 shadow-md shadow-blue-500/10"
                       : "bg-slate-50/80 border-slate-200 hover:border-slate-300 hover:bg-white"
                   }`}
                 >
@@ -80,7 +80,7 @@ export default function CapabilityMap() {
 
           {/* Right Side */}
           <div className="lg:col-span-7">
-            <div className="h-full glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-card bg-white">
+            <div className="h-full glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-xl bg-white">
               <div className="space-y-6">
                 {/* Header */}
                 <div className="flex items-center gap-4 border-b border-slate-100 pb-6">

@@ -43,23 +43,23 @@ html {
 
 @layer components {
   .glass {
-    @apply bg-white/80 backdrop-blur-xl border border-slate-200/80 shadow-soft;
+    @apply bg-white/80 backdrop-blur-xl border border-slate-200/80 shadow-sm;
   }
 
   .glass-card {
-    @apply bg-white/90 backdrop-blur-xl border border-slate-200/80 hover:border-blue-500/40 hover:shadow-card transition-all duration-300 shadow-soft;
+    @apply bg-white/90 backdrop-blur-xl border border-slate-200/80 hover:border-blue-500/40 hover:shadow-xl transition-all duration-300 shadow-md;
   }
 
   .glass-panel {
-    @apply bg-white/95 backdrop-blur-2xl border border-slate-200 shadow-card;
+    @apply bg-white/95 backdrop-blur-2xl border border-slate-200 shadow-lg;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent;
   }
 
   .gradient-text-purple {
-    @apply bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent;
   }
 
   .section-padding {
@@ -71,7 +71,7 @@ html {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3.5 font-heading text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:from-blue-500 hover:to-indigo-500 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3.5 font-heading text-sm font-semibold text-white shadow-md transition-all duration-300 hover:from-blue-500 hover:to-indigo-500 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
   }
 
   .btn-secondary {
