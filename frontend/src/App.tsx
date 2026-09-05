@@ -14,7 +14,7 @@ import WhyWorkWithMe from "./components/sections/WhyWorkWithMe";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 import CustomCursor from "./components/ui/CustomCursor";
-import FloatingWhatsApp from "./components/ui/FloatingWhatsApp";
+import FloatingChatbot from "./components/ui/FloatingChatbot";
 
 export default function App() {
   return (
@@ -37,7 +37,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <FloatingWhatsApp />
+      <FloatingChatbot />
     </div>
   );
 }

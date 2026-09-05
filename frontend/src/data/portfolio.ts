@@ -18,7 +18,7 @@ export const profile = {
   email: "shashidharbiradar6@gmail.com",
   github: "https://github.com/shashidharbiradar",
   linkedin: "https://www.linkedin.com/in/shashidhar-biradar-20a999293/",
-  resumeFile: "/resume.pdf",
+  resumeFile: "https://drive.google.com/file/d/1OtPn6N2_vjpEac3hwBfwqmav_aWpaUcX/view?usp=sharing",
   profileImage: "/profile.jpg",
   tagline:
     "I build complete digital solutions — from UI/UX and full-stack development to AI integration, automation, APIs, third-party integrations, and production cloud deployment.",
