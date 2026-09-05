@@ -60,8 +60,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Unexpected server error." });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Backend running on http://localhost:${PORT}`);
-  console.log(`   Allowing requests from: ${CLIENT_URL}`);
-  verifyTransport();
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Backend running on http://localhost:${PORT}`);
+    console.log(`   Allowing requests from: ${CLIENT_URL}`);
+    verifyTransport();
+  });
+}
+
+module.exports = app;
