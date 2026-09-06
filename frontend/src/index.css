@@ -22,7 +22,7 @@ html {
 }
 
 ::selection {
-  background-color: #2563eb;
+  background-color: #f97316;
   color: #ffffff;
 }
 
@@ -38,7 +38,7 @@ html {
   border: 2px solid #f8fafc;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #f97316;
 }
 
 @layer components {
@@ -47,7 +47,7 @@ html {
   }
 
   .glass-card {
-    @apply bg-white/90 backdrop-blur-xl border border-slate-200/80 hover:border-blue-500/40 hover:shadow-xl transition-all duration-300 shadow-md;
+    @apply bg-white/90 backdrop-blur-xl border border-slate-200/80 hover:border-orange-500/40 hover:shadow-xl transition-all duration-300 shadow-md;
   }
 
   .glass-panel {
@@ -55,11 +55,11 @@ html {
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-slate-900 via-slate-800 to-orange-600 bg-clip-text text-transparent;
   }
 
-  .gradient-text-purple {
-    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent;
+  .gradient-text-orange {
+    @apply bg-gradient-to-r from-orange-600 via-amber-600 to-orange-500 bg-clip-text text-transparent;
   }
 
   .section-padding {
@@ -67,19 +67,19 @@ html {
   }
 
   .eyebrow {
-    @apply font-mono text-xs tracking-[0.2em] uppercase text-blue-600 font-semibold flex items-center gap-2;
+    @apply font-mono text-xs tracking-[0.2em] uppercase text-orange-600 font-semibold flex items-center gap-2;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3.5 font-heading text-sm font-semibold text-white shadow-md transition-all duration-300 hover:from-blue-500 hover:to-indigo-500 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-orange-600 px-6 py-3.5 font-heading text-sm font-semibold text-white shadow-md shadow-orange-500/20 transition-all duration-300 hover:bg-orange-700 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 font-heading text-sm font-semibold text-slate-800 backdrop-blur-md transition-all duration-300 hover:border-blue-500 hover:bg-slate-50 hover:text-blue-600 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 font-heading text-sm font-semibold text-slate-800 backdrop-blur-md transition-all duration-300 hover:border-orange-500 hover:bg-orange-50/30 hover:text-orange-600 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600;
   }
 
   .tech-pill {
-    @apply rounded-md border border-blue-200/80 bg-blue-50/80 px-2.5 py-1 font-mono text-xs text-blue-700 hover:border-blue-300 transition-colors;
+    @apply rounded-md border border-slate-200 bg-slate-100/80 px-2.5 py-1 font-mono text-xs text-slate-700 hover:border-orange-300 hover:text-orange-600 transition-colors;
   }
 }
 
@@ -87,6 +87,6 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #f97316;
   outline-offset: 2px;
 }

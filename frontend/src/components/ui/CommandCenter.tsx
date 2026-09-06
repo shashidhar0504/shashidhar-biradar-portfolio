@@ -1,101 +1,129 @@
-import { useState, useEffect } from "react";
-import { Server, Layout, Brain, Zap, Database, Cloud, Cpu, ShieldCheck, Terminal } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Sparkles, ArrowUpRight, Code2, Server, BrainCircuit, Award } from "lucide-react";
+import { profile } from "../../data/portfolio";
 
 export default function CommandCenter() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0, glowX: 50, glowY: 50 });
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth - 0.5) * 20;
-      const y = (e.clientY / innerHeight - 0.5) * 20;
-      setMousePos({ x, y });
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // Subtle tilt ranges (-5deg to +5deg)
+      const rotateX = -((y / rect.height - 0.5) * 10);
+      const rotateY = (x / rect.width - 0.5) * 10;
+      const glowX = (x / rect.width) * 100;
+      const glowY = (y / rect.height) * 100;
+
+      setTilt({ rotateX, rotateY, glowX, glowY });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("mousemove", handleMouseMove);
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener("mousemove", handleMouseMove);
+      }
+    };
   }, []);
 
-  const nodes = [
-    { name: "Java 17+", role: "Core Language", icon: Cpu, color: "text-amber-700 border-amber-200 bg-amber-50", posX: -120, posY: -90 },
-    { name: "Spring Boot", role: "Backend Microservices", icon: Server, color: "text-emerald-700 border-emerald-200 bg-emerald-50", posX: 110, posY: -110 },
-    { name: "React.js", role: "Frontend UI", icon: Layout, color: "text-sky-700 border-sky-200 bg-sky-50", posX: -140, posY: 40 },
-    { name: "AI & LLMs", role: "Intelligent Workflows", icon: Brain, color: "text-purple-700 border-purple-200 bg-purple-50", posX: 120, posY: 30 },
-    { name: "MySQL", role: "Relational DB", icon: Database, color: "text-blue-700 border-blue-200 bg-blue-50", posX: 0, posY: 110 },
-    { name: "Automation", role: "Workflows & APIs", icon: Zap, color: "text-orange-700 border-orange-200 bg-orange-50", posX: 0, posY: -130 },
-  ];
-
   return (
-    <div className="relative w-full max-w-lg aspect-square flex items-center justify-center p-4">
-      {/* Background Ambient Glows */}
-      <div className="absolute inset-0 bg-gradient-radial from-blue-400/20 via-indigo-400/10 to-transparent blur-3xl rounded-full" />
-
-      {/* Central Command Core Card */}
+    <div
+      ref={containerRef}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setTilt({ rotateX: 0, rotateY: 0, glowX: 50, glowY: 50 });
+      }}
+      className="relative w-full max-w-md lg:max-w-lg aspect-[4/5] flex items-center justify-center p-4 sm:p-6 perspective-1000 select-none"
+    >
+      {/* Dynamic Ambient Orange Glow Following Mouse */}
       <div
-        className="relative z-10 glass-panel rounded-3xl p-6 border border-slate-200 shadow-xl text-center transition-transform duration-300 ease-out bg-white"
+        className="absolute inset-0 rounded-3xl opacity-40 blur-3xl transition-opacity duration-500 pointer-events-none"
         style={{
-          transform: `translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)`,
+          background: `radial-gradient(circle at ${tilt.glowX}% ${tilt.glowY}%, rgba(249, 115, 22, 0.35) 0%, rgba(249, 115, 22, 0.05) 50%, transparent 80%)`,
+        }}
+      />
+
+      {/* Geometric Orange Accent Frame Behind Portrait */}
+      <div className="absolute inset-4 sm:inset-6 rounded-3xl border-2 border-orange-500/30 bg-gradient-to-tr from-orange-500/10 via-amber-500/5 to-transparent translate-x-3 translate-y-3 pointer-events-none rounded-3xl transition-transform duration-300" />
+
+      {/* Main Interactive Portrait Card */}
+      <div
+        className="relative z-10 w-full h-full rounded-3xl bg-slate-900 border border-slate-700/80 shadow-2xl overflow-hidden group transition-all duration-200 ease-out"
+        style={{
+          transform: isHovered
+            ? `rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg) scale(1.02)`
+            : "rotateX(0deg) rotateY(0deg) scale(1)",
+          transformStyle: "preserve-3d",
         }}
       >
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-md shadow-blue-500/20 text-white mb-3">
-          <Terminal className="h-7 w-7" />
-        </div>
-        <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-[11px] font-mono font-semibold text-blue-700 border border-blue-200 mb-2">
-          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-          SYSTEM_ONLINE
-        </div>
-        <h3 className="font-heading text-lg font-bold text-slate-900 tracking-tight">Shashidhar Biradar</h3>
-        <p className="font-mono text-xs text-slate-500 mt-1">Full Stack Java & AI Architecture</p>
+        {/* Actual Provided Photo */}
+        <img
+          src={profile.profileImage}
+          alt={profile.name}
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          loading="eager"
+        />
 
-        {/* Live Metrics Grid */}
-        <div className="mt-4 grid grid-cols-2 gap-2 text-left pt-3 border-t border-slate-100">
-          <div className="rounded-xl bg-slate-50 p-2.5 border border-slate-200">
-            <span className="block text-[10px] text-slate-500 font-mono">BACKEND</span>
-            <span className="font-heading text-xs font-semibold text-blue-700 flex items-center gap-1">
-              <ShieldCheck className="h-3.5 w-3.5" /> Spring Security
-            </span>
-          </div>
-          <div className="rounded-xl bg-slate-50 p-2.5 border border-slate-200">
-            <span className="block text-[10px] text-slate-500 font-mono">DEPLOYMENT</span>
-            <span className="font-heading text-xs font-semibold text-emerald-600 flex items-center gap-1">
-              <Cloud className="h-3.5 w-3.5" /> Production Ready
-            </span>
-          </div>
+        {/* Gradient Overlay for Readable Text Badges */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none" />
+
+        {/* Top-Right Floating Card: "Turning Ideas Into Real Solutions →" */}
+        <div className="absolute top-4 right-4 z-20 transition-transform duration-300 group-hover:-translate-y-1">
+          <a
+            href="#projects"
+            className="flex items-center gap-2 rounded-2xl bg-white/95 backdrop-blur-md px-3.5 py-2 text-xs font-heading font-bold text-slate-900 shadow-lg border border-slate-200/80 hover:border-orange-500 hover:text-orange-600 transition-colors"
+          >
+            <span>Turning Ideas Into Real Solutions</span>
+            <ArrowUpRight className="h-3.5 w-3.5 text-orange-600" />
+          </a>
         </div>
 
-        {/* Mobile Tech Stack Chips Fallback */}
-        <div className="mt-3 sm:hidden flex flex-wrap justify-center gap-1.5 pt-2 border-t border-slate-100">
-          {nodes.map((node, i) => (
-            <span key={i} className={`text-[10px] font-mono font-semibold px-2 py-0.5 rounded-md border ${node.color}`}>
-              {node.name}
-            </span>
-          ))}
+        {/* Bottom-Left Floating Badge: "Build • Automate • Innovate" */}
+        <div className="absolute bottom-4 left-4 z-20 transition-transform duration-300 group-hover:translate-x-1">
+          <div className="flex items-center gap-2 rounded-2xl bg-slate-900/90 backdrop-blur-md px-3.5 py-2 text-xs font-mono font-semibold text-orange-400 border border-orange-500/40 shadow-lg">
+            <Sparkles className="h-3.5 w-3.5 text-orange-500 animate-pulse" />
+            <span>Build • Automate • Innovate</span>
+          </div>
+        </div>
+
+        {/* Bottom-Right Pill: "BCA 9.17 CGPA" */}
+        <div className="absolute bottom-4 right-4 z-20 hidden sm:block transition-transform duration-300 group-hover:scale-105">
+          <div className="flex items-center gap-1.5 rounded-full bg-emerald-500/90 text-white backdrop-blur-md px-3 py-1 text-[11px] font-mono font-bold shadow-lg">
+            <Award className="h-3.5 w-3.5" />
+            <span>9.17 CGPA</span>
+          </div>
         </div>
       </div>
 
-      {/* Floating Orbit Tech Nodes */}
-      <div className="absolute inset-0 pointer-events-none hidden sm:block">
-        {nodes.map((node, i) => {
-          const Icon = node.icon;
-          return (
-            <div
-              key={i}
-              className={`absolute top-1/2 left-1/2 pointer-events-auto rounded-2xl p-3 backdrop-blur-md border border-slate-200 shadow-md shadow-slate-200/50 transition-transform duration-500 ease-out animate-float bg-white/90`}
-              style={{
-                transform: `translate(calc(-50% + ${node.posX}px + ${mousePos.x * (i % 2 === 0 ? 0.8 : -0.8)}px), calc(-50% + ${node.posY}px + ${mousePos.y * (i % 2 === 0 ? 0.8 : -0.8)}px))`,
-                animationDelay: `${i * 0.8}s`,
-              }}
-            >
-              <div className={`flex items-center gap-2.5 rounded-xl ${node.color} px-3 py-1.5 border`}>
-                <Icon className="h-4 w-4 shrink-0" />
-                <div className="text-left whitespace-nowrap">
-                  <div className="font-heading text-xs font-bold">{node.name}</div>
-                  <div className="font-mono text-[9px] opacity-80">{node.role}</div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      {/* Orbiting Tech Chips (Desktop only) */}
+      <div className="absolute -top-2 -left-2 z-30 hidden lg:block animate-float">
+        <div className="flex items-center gap-2 rounded-2xl bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-md border border-slate-200 text-xs font-heading font-bold text-slate-800">
+          <Code2 className="h-4 w-4 text-orange-600" />
+          <span>Java 21</span>
+        </div>
+      </div>
+
+      <div className="absolute top-1/2 -right-4 z-30 hidden lg:block animate-float-slow">
+        <div className="flex items-center gap-2 rounded-2xl bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-md border border-slate-200 text-xs font-heading font-bold text-slate-800">
+          <Server className="h-4 w-4 text-orange-600" />
+          <span>Spring Boot 3</span>
+        </div>
+      </div>
+
+      <div className="absolute -bottom-2 -left-2 z-30 hidden lg:block animate-float">
+        <div className="flex items-center gap-2 rounded-2xl bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-md border border-slate-200 text-xs font-heading font-bold text-slate-800">
+          <BrainCircuit className="h-4 w-4 text-orange-600" />
+          <span>AI & Automation</span>
+        </div>
       </div>
     </div>
   );

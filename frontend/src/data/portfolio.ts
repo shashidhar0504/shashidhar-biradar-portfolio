@@ -4,7 +4,7 @@
 export const profile = {
   name: "Shashidhar Biradar",
   primaryTitle: "Full Stack Java Developer | AI & Automation Engineer",
-  secondaryTitle: "Spring Boot & React Specialist • Backend Developer • Technical Solution Builder",
+  secondaryTitle: "Spring Boot & React Specialist | Backend Developer | Technical Solution Builder",
   roles: [
     "Full Stack Java Developer",
     "AI & Automation Engineer",
@@ -20,9 +20,9 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/shashidhar-biradar-20a999293/",
   resumeFile: "https://drive.google.com/file/d/1OtPn6N2_vjpEac3hwBfwqmav_aWpaUcX/view?usp=sharing",
   profileImage: "/profile.jpg",
-  tagline:
-    "I build complete digital solutions — from UI/UX and full-stack development to AI integration, automation, APIs, third-party integrations, and production cloud deployment.",
-  status: "Available for Full-Time Opportunities & Client Projects",
+  tagline: "I build scalable web applications, backend systems, AI-powered solutions and automation workflows that solve real-world problems.",
+  currentlyBuilding: "GridWeaver — Java 21 • Spring Boot • Kafka • PostgreSQL",
+  status: "Open to Full-Time Opportunities & Freelance Projects",
   languagesSpoken: [
     "English",
     "Hindi",
@@ -36,16 +36,26 @@ export const profile = {
 export const about = {
   headline: "Building production-ready software with Java engineering, AI capabilities, and end-to-end SDLC ownership.",
   paragraphs: [
-    "I'm a Full Stack Java Developer and AI & Automation Engineer with hands-on experience crafting scalable, secure web platforms, business digital storefronts, and intelligent business systems. My core engineering foundation centers on Java, Spring Boot, Spring Security, Hibernate/JPA, MySQL, and React.js.",
-    "I take complete ownership of the software development lifecycle — from initial requirement discovery, architecture design, and database normalization to REST API development, third-party payment/communication integrations, automated workflows, and production deployment.",
-    "Beyond traditional software architecture, I integrate modern AI models, LLM APIs, and automated communication triggers into business applications across diverse industries — turning complex requirements into seamless, client-focused digital products.",
+    "I'm a Full Stack Java Developer and AI & Automation Engineer with hands-on experience crafting scalable backend microservices, web platforms, business digital storefronts, and intelligent automation systems. My core engineering foundation centers on Java 21, Spring Boot 3, Spring Security, Hibernate/JPA, MySQL, PostgreSQL, and React.js.",
+    "I take complete ownership of the software development lifecycle — from initial requirement discovery, architecture design, and database normalization to REST API development, third-party payment/communication integrations, automated workflows, and production cloud deployment.",
+    "Beyond core software architecture, I integrate modern AI models, LLM APIs, prompt workflows, and automated communication triggers into business applications — turning complex requirements into seamless, client-focused digital products.",
   ],
   highlights: [
     { label: "End-to-End Ownership", value: "Requirements → Design → Dev → Cloud Launch" },
-    { label: "Core Stack", value: "Java · Spring Boot · React · AI & Automation" },
+    { label: "Core Stack", value: "Java 21 · Spring Boot · React · AI & Automation" },
     { label: "Academic Excellence", value: "9.17 CGPA (BCA Graduate 2026)" },
   ],
 };
+
+export const atAGlance = [
+  { label: "Education", value: "BCA — 9.17 CGPA", detail: "Sarhad College, Pune" },
+  { label: "Primary Role", value: "Full Stack Java Developer", detail: "Enterprise & Client Engineering" },
+  { label: "Core Stack", value: "Spring Boot + React", detail: "REST APIs & Modern Web UI" },
+  { label: "Specialization", value: "AI + Automation", detail: "LLM APIs & Workflow Triggers" },
+  { label: "Integrations", value: "Razorpay, WhatsApp, SMTP", detail: "Payments & Communication" },
+  { label: "Deployment", value: "Production Cloud Launch", detail: "Vercel & Microservice Hosting" },
+  { label: "Location", value: "Pune, India", detail: "Available for Remote & Onsite" },
+];
 
 export type CapabilityCategory = {
   id: string;
@@ -59,31 +69,31 @@ export type CapabilityCategory = {
 export const capabilities: CapabilityCategory[] = [
   {
     id: "software-engineering",
-    title: "Software Engineering",
-    subtitle: "Enterprise Java & Backend Architecture",
+    title: "Backend Engineering",
+    subtitle: "Enterprise Java & Event-Driven Architecture",
     iconName: "Server",
-    technologies: ["Java", "Spring Boot", "Spring Security", "Hibernate / JPA", "REST APIs", "MySQL", "JWT Auth", "Microservice-ready Design"],
-    description: "Architecting clean, scalable RESTful services, secure JWT authentication schemes, normalized relational databases, and maintainable backend systems.",
+    technologies: ["Java 21", "Spring Boot 3", "Virtual Threads", "Spring Security", "Hibernate / JPA", "Apache Kafka", "PostgreSQL", "MySQL", "REST APIs", "JWT Auth"],
+    description: "Architecting clean, scalable RESTful services, event-driven streaming pipelines, secure JWT authentication schemes, and normalized database models.",
   },
   {
     id: "frontend-engineering",
     title: "Frontend Engineering",
     subtitle: "Modern React & Responsive Interfaces",
     iconName: "Layout",
-    technologies: ["React.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "Bootstrap", "HTML5/CSS3", "Framer Motion"],
+    technologies: ["React.js", "TypeScript", "JavaScript (ES6+)", "Vite", "Tailwind CSS", "Bootstrap", "HTML5/CSS3", "Framer Motion"],
     description: "Designing fast, mobile-first visual experiences with intuitive component structures, dynamic state management, and subtle micro-interactions.",
   },
   {
     id: "ai-intelligent-systems",
-    title: "AI & Intelligent Systems",
-    subtitle: "AI Integrations & Workflow Enhancement",
+    title: "AI Integration & Workflows",
+    subtitle: "AI API Integration & Intelligent Features",
     iconName: "BrainCircuit",
-    technologies: ["LLM API Integration", "AI-assisted Workflows", "Intelligent Automation", "Prompt Engineering", "AI-enhanced Web Applications"],
-    description: "Enhancing traditional applications with intelligent natural language interfaces, automated content pipelines, and AI API integrations.",
+    technologies: ["LLM API Integration", "AI-assisted Workflows", "Intelligent Automation", "Prompt Engineering", "AI-powered Digital Solutions"],
+    description: "Enhancing traditional applications with intelligent natural language interfaces, automated response routing, and AI API integrations.",
   },
   {
     id: "automation",
-    title: "Workflow Automation",
+    title: "Workflow & Communication Automation",
     subtitle: "API & Process Integration",
     iconName: "Zap",
     technologies: ["WhatsApp Business API", "Automated Email Workflows", "Lead Management", "Triggered Webhooks", "Deployment Scripts"],
@@ -91,7 +101,7 @@ export const capabilities: CapabilityCategory[] = [
   },
   {
     id: "integrations",
-    title: "Third-Party Integrations",
+    title: "Third-Party & Business Integrations",
     subtitle: "Payments, Communication & APIs",
     iconName: "Layers",
     technologies: ["Razorpay Integration", "WhatsApp Direct Chat", "Nodemailer / SMTP", "Third-Party REST APIs", "OAuth & Security Tokens"],
@@ -99,10 +109,10 @@ export const capabilities: CapabilityCategory[] = [
   },
   {
     id: "deployment",
-    title: "Cloud & Deployment",
-    subtitle: "Production Hosting & Environments",
+    title: "Cloud & Production Delivery",
+    subtitle: "Hosting & Release Management",
     iconName: "Cloud",
-    technologies: ["Vercel", "Git / GitHub", "Production Maintenance", "Domain Config", "Environment Variables", "Build Optimization"],
+    technologies: ["Vercel", "Git / GitHub", "Docker", "Production Maintenance", "Domain Config", "Environment Setup"],
     description: "Packaging frontend static bundles and backend web services for high-availability cloud deployment with zero-downtime workflows.",
   },
 ];
@@ -114,44 +124,85 @@ export type SkillCategory = {
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Backend & Enterprise Java",
+    title: "Languages",
     skills: [
-      { name: "Java", level: "Advanced", category: "Core Language", description: "OOP, Collections, Streams, Concurrency", icon: "Code2" },
-      { name: "Spring Boot", level: "Advanced", category: "Backend Framework", description: "Dependency Injection, Auto-config, Spring Data", icon: "Server" },
-      { name: "Spring Security", level: "Strong", category: "Security", description: "JWT, Role-based Access, Filter Chains", icon: "ShieldCheck" },
-      { name: "Hibernate / JPA", level: "Advanced", category: "ORM", description: "Entity mapping, HQL queries, Relationships", icon: "Database" },
-      { name: "REST APIs", level: "Advanced", category: "API Design", description: "RESTful architecture, JSON payloads, HTTP status", icon: "Globe" },
-      { name: "Servlets & JSP", level: "Experienced", category: "Java Web", description: "Request handling, Session management, MVC", icon: "Cpu" },
+      { name: "Java", level: "Advanced", category: "Core Language", description: "Java 21, OOP, Collections, Concurrency, Virtual Threads", icon: "Code2" },
+      { name: "JavaScript", level: "Advanced", category: "Web Core", description: "ES6+, Async/Await, DOM manipulation, Event Loop", icon: "FileCode" },
+      { name: "TypeScript", level: "Strong", category: "Type System", description: "Interfaces, Generics, Type Safety, React Integration", icon: "FileCode" },
+      { name: "SQL", level: "Advanced", category: "Database Querying", description: "Complex Joins, Aggregations, Subqueries, Optimization", icon: "Database" },
+      { name: "HTML5", level: "Advanced", category: "Markup", description: "Semantic HTML, Accessibility, Web Standards", icon: "Layout" },
+      { name: "CSS3", level: "Advanced", category: "Styling", description: "Flexbox, Grid, Custom Properties, Responsive Design", icon: "Palette" },
     ],
   },
   {
-    title: "Frontend Engineering",
+    title: "Backend",
     skills: [
-      { name: "React.js", level: "Advanced", category: "UI Library", description: "Hooks, Context API, Component Architecture", icon: "Layout" },
-      { name: "JavaScript / TypeScript", level: "Advanced", category: "Web Core", description: "ES6+, Async/Await, DOM, Type Safety", icon: "FileCode" },
-      { name: "Tailwind CSS", level: "Strong", category: "Styling", description: "Custom design systems, responsive grid", icon: "Palette" },
-      { name: "Bootstrap", level: "Experienced", category: "UI Framework", description: "Responsive layouts, utility components", icon: "Smartphone" },
-      { name: "Responsive UI/UX", level: "Advanced", category: "Design", description: "Mobile-first, touch targets, accessible UI", icon: "Monitor" },
+      { name: "Spring Boot", level: "Advanced", category: "Framework", description: "Spring Boot 3, Dependency Injection, REST Controllers", icon: "Server" },
+      { name: "Spring Security", level: "Strong", category: "Security", description: "JWT Stateless Auth, Role-Based Access, Filter Chains", icon: "ShieldCheck" },
+      { name: "Spring MVC", level: "Advanced", category: "Web Tier", description: "Controller Mappings, Request Handling, Exception Handling", icon: "Cpu" },
+      { name: "Hibernate / JPA", level: "Advanced", category: "ORM", description: "Entity Relationships, HQL, JPQL, Transaction Management", icon: "Database" },
+      { name: "REST APIs", level: "Advanced", category: "Architecture", description: "RESTful principles, JSON contracts, Status Codes", icon: "Globe" },
+      { name: "JWT Authentication", level: "Strong", category: "Auth", description: "Token Signing, Verification, Refresh tokens, Payload security", icon: "ShieldCheck" },
+      { name: "Servlets & JSP", level: "Experienced", category: "Java Enterprise", description: "Servlet Lifecycle, Session Tracking, Request Dispatching", icon: "Cpu" },
+      { name: "Node.js & Express", level: "Experienced", category: "JavaScript Backend", description: "REST Services, Middleware, NPM ecosystem", icon: "Server" },
     ],
   },
   {
-    title: "AI, Automation & Integrations",
+    title: "Frontend",
     skills: [
-      { name: "AI API Integration", level: "Practical Experience", category: "Intelligent Systems", description: "Connecting LLMs & AI APIs to production apps", icon: "Brain" },
-      { name: "WhatsApp Business API", level: "Strong", category: "Communication", description: "Automated chat links, pre-filled customer triggers", icon: "MessageSquare" },
-      { name: "Razorpay Gateway", level: "Strong", category: "Payments", description: "Checkout integration, webhook verification", icon: "CreditCard" },
-      { name: "Email Automation", level: "Strong", category: "Workflows", description: "Nodemailer, SMTP triggers, dynamic notifications", icon: "Mail" },
-      { name: "Workflow Automation", level: "Strong", category: "Process", description: "Lead routing, triggered API notifications", icon: "Workflow" },
+      { name: "React.js", level: "Advanced", category: "UI Framework", description: "Hooks, Context API, Modular Components, State Management", icon: "Layout" },
+      { name: "JavaScript ES6+", level: "Advanced", category: "Language", description: "Destructuring, Modules, Promises, Functional Patterns", icon: "FileCode" },
+      { name: "TypeScript", level: "Strong", category: "Typed React", description: "Typed Props, State interfaces, Custom Hooks", icon: "FileCode" },
+      { name: "Vite", level: "Advanced", category: "Build Tool", description: "Fast HMR, ES modules, Optimized production bundles", icon: "Zap" },
+      { name: "Tailwind CSS", level: "Advanced", category: "Utility CSS", description: "Custom Design Systems, Responsive Grids, Flexbox", icon: "Palette" },
+      { name: "Bootstrap", level: "Experienced", category: "CSS Library", description: "Responsive Grids, Components, Utility Classes", icon: "Smartphone" },
+      { name: "Responsive UI/UX", level: "Advanced", category: "Design System", description: "Mobile-first, touch targets, cross-browser compatibility", icon: "Monitor" },
     ],
   },
   {
-    title: "Database, Tools & Cloud",
+    title: "Databases",
     skills: [
-      { name: "MySQL", level: "Advanced", category: "Database", description: "Schema normalization, indexing, complex joins", icon: "Database" },
-      { name: "Git & GitHub", level: "Advanced", category: "Version Control", description: "Branching strategies, PRs, version tracking", icon: "GitBranch" },
-      { name: "Vercel / Cloud", level: "Experienced", category: "Deployment", description: "Frontend hosting, domain routing, env setup", icon: "CloudUpload" },
-      { name: "Postman", level: "Advanced", category: "Testing", description: "API documentation, endpoint validation", icon: "Terminal" },
-      { name: "Eclipse / VS Code", level: "Advanced", category: "IDE", description: "Java debugging, Maven dependencies, extensions", icon: "Laptop" },
+      { name: "MySQL", level: "Advanced", category: "Relational DB", description: "Schema normalization, indexing, foreign keys, query tuning", icon: "Database" },
+      { name: "PostgreSQL", level: "Strong", category: "Relational DB", description: "JSONB columns, ACID compliance, complex triggers", icon: "Database" },
+      { name: "Database Design", level: "Advanced", category: "Modeling", description: "ER Diagrams, Normalization (1NF-3NF), Primary & Foreign Keys", icon: "Database" },
+    ],
+  },
+  {
+    title: "AI & Automation",
+    skills: [
+      { name: "AI Integration", level: "Practical", category: "API Integration", description: "Connecting LLM APIs into web applications & workflows", icon: "Brain" },
+      { name: "Prompt Engineering", level: "Strong", category: "AI Workflows", description: "System prompts, structured output JSON formatting", icon: "MessageSquare" },
+      { name: "AI-Assisted Dev", level: "Advanced", category: "Productivity", description: "Accelerated prototyping, code analysis, testing", icon: "Zap" },
+      { name: "AI-Powered Workflows", level: "Strong", category: "Automation", description: "Intelligent lead routing and automated response drafting", icon: "Workflow" },
+      { name: "API/LLM Integration", level: "Strong", category: "Integrations", description: "RESTful invocation of AI services into web frontends", icon: "Globe" },
+      { name: "Workflow Automation", level: "Strong", category: "Process", description: "Lead capture triggers, automated messaging pipelines", icon: "Workflow" },
+      { name: "Intelligent Solutions", level: "Practical", category: "Digital Products", description: "Blending business logic with automated communication triggers", icon: "Brain" },
+    ],
+  },
+  {
+    title: "Architecture",
+    skills: [
+      { name: "Java 21", level: "Advanced", category: "Language Standard", description: "Virtual Threads (Project Loom), Record Classes, Pattern Matching", icon: "Code2" },
+      { name: "Virtual Threads", level: "Strong", category: "Concurrency", description: "High-throughput lightweight concurrency without thread starvation", icon: "Cpu" },
+      { name: "Apache Kafka", level: "Practical", category: "Event Streaming", description: "Topics, Producers, Consumers, Event-driven telemetry processing", icon: "Zap" },
+      { name: "WebSockets", level: "Strong", category: "Real-Time Comms", description: "STOMP / SockJS real-time telemetry streaming to dashboards", icon: "Globe" },
+      { name: "Event-Driven Arch", level: "Strong", category: "System Pattern", description: "Decoupled message passing, event producers and consumers", icon: "Workflow" },
+      { name: "State Management", level: "Strong", category: "Data Flow", description: "Frontend React state & Backend atomic entity state engines", icon: "Layers" },
+      { name: "Clean Architecture", level: "Advanced", category: "Design Pattern", description: "Separation of concerns, Controller-Service-Repository layers", icon: "ShieldCheck" },
+    ],
+  },
+  {
+    title: "Tools & Integrations",
+    skills: [
+      { name: "Git & GitHub", level: "Advanced", category: "Version Control", description: "Branching strategies, PR reviews, version tracking", icon: "GitBranch" },
+      { name: "Docker", level: "Experienced", category: "Containerization", description: "Dockerfile creation, docker-compose multi-container setups", icon: "CloudUpload" },
+      { name: "Maven", level: "Advanced", category: "Build Tool", description: "POM dependency management, lifecycle builds, plugins", icon: "Terminal" },
+      { name: "Postman", level: "Advanced", category: "API Testing", description: "Collection testing, environment variables, mock servers", icon: "Terminal" },
+      { name: "Eclipse / VS Code", level: "Advanced", category: "IDE", description: "Java debugging, extensions, Maven project management", icon: "Laptop" },
+      { name: "Vercel", level: "Experienced", category: "Cloud Deployment", description: "Static React hosting, continuous integration, domain routing", icon: "CloudUpload" },
+      { name: "Razorpay", level: "Strong", category: "Payments", description: "Checkout modal integration, payment verification API", icon: "CreditCard" },
+      { name: "WhatsApp Business API", level: "Strong", category: "Messaging", description: "Deep links, automated pre-filled customer triggers", icon: "MessageSquare" },
+      { name: "Email / Nodemailer", level: "Strong", category: "Notifications", description: "SMTP configuration, automated alert dispatching", icon: "Mail" },
     ],
   },
 ];
@@ -169,7 +220,8 @@ export type CaseStudy = {
 export type Project = {
   id: string;
   title: string;
-  category: "Full Stack" | "Production" | "AI & Automation" | "Automation" | "Client Work" | "Business Websites" | "E-Commerce" | "Academic";
+  subtitle?: string;
+  category: "Event-Driven Architecture" | "Production / Freelance" | "Client Project" | "Solar Business Website" | "Client Services Website" | "Organization Website" | "Academic Project";
   filterCategories: string[];
   description: string;
   techStack: string[];
@@ -184,10 +236,66 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "gridweaver",
+    title: "GridWeaver",
+    subtitle: "Virtual Thread IoT Microgrid State Engine",
+    category: "Event-Driven Architecture",
+    filterCategories: ["All", "Full Stack", "Backend", "Event-Driven Architecture"],
+    description:
+      "An event-driven backend telemetry engine and dashboard processing real-time IoT energy metrics across microgrids using Java 21 Virtual Threads, Apache Kafka, PostgreSQL, and WebSockets.",
+    techStack: [
+      "Java 21",
+      "Spring Boot 3",
+      "Virtual Threads",
+      "Apache Kafka",
+      "PostgreSQL",
+      "REST APIs",
+      "WebSockets",
+      "React",
+      "TypeScript",
+      "Docker",
+      "Git/GitHub",
+    ],
+    highlights: [
+      "Engineered event-driven backend telemetry intake handling high-concurrency energy metrics using Java 21 Virtual Threads",
+      "Integrated Apache Kafka event streaming pipeline with PostgreSQL state engine persistence",
+      "Built real-time WebSocket telemetry push to responsive React dashboard for zero-polling monitoring",
+      "Implemented Clean Architecture pattern separating domain state core from messaging adapters",
+    ],
+    githubUrl: "https://github.com/shashidhar0504/Portfolio",
+    isProduction: true,
+    myContribution: "Backend Architecture, Java 21 Virtual Thread State Engine, Kafka Event Consumer, PostgreSQL Persistence, WebSocket Streamer, React Dashboard UI",
+    featured: true,
+    caseStudy: {
+      challenge: "Microgrid infrastructure generates high-frequency power & load telemetry across distributed IoT meters, requiring sub-second state evaluation without thread starvation or database connection pool bottlenecks.",
+      solution: "Architected GridWeaver as an event-driven backend using Java 21 Virtual Threads and Apache Kafka event queues to process concurrent telemetry streams into a normalized PostgreSQL state engine with WebSocket live dashboard streaming.",
+      architecture: [
+        "IoT Energy Meters / Load Simulator",
+        "Apache Kafka Telemetry Topic",
+        "Spring Boot 3 (Virtual Thread Handlers)",
+        "State Engine & Business Logic Layer",
+        "PostgreSQL Relational Storage",
+        "WebSocket STOMP Event Broadcaster",
+        "React Monitoring Dashboard",
+      ],
+      features: [
+        "Concurrent telemetry intake powered by lightweight Java 21 Virtual Threads",
+        "Kafka topic ingestion for grid frequency, solar output, and battery load metrics",
+        "Atomic state evaluation engine persisting meter snapshots into PostgreSQL",
+        "Real-time WebSocket event broadcasting to React monitoring dashboard",
+        "Docker containerized local development & execution configuration",
+      ],
+      integrations: ["Apache Kafka Stream API", "WebSocket STOMP Protocol", "Spring Boot Virtual Thread Executor", "Docker Compose"],
+      deployment: "Containerized application with Docker Compose and Spring Boot production profile.",
+      outcome: "Demonstrates enterprise-grade backend system engineering capable of high-throughput event processing with minimal memory overhead.",
+    },
+  },
+  {
     id: "universalurja",
     title: "UniversalUrja Platform",
-    category: "Production",
-    filterCategories: ["All", "Full Stack", "Production", "Client Work", "E-Commerce"],
+    subtitle: "Full Stack E-Commerce & Wellness Platform",
+    category: "Production / Freelance",
+    filterCategories: ["All", "Full Stack", "Production / Freelance", "Client Project"],
     description:
       "A production-ready full-stack e-commerce and wellness platform supporting online sales, course bookings, consultation scheduling, Razorpay payments, and administrative workflows.",
     techStack: [
@@ -219,7 +327,7 @@ export const projects: Project[] = [
       challenge: "The client needed a unified online platform to sell wellness products, accept instant course bookings, schedule consultations, and handle real-time payment verification without relying on disjointed third-party forms.",
       solution: "Engineered a custom full-stack web application with Spring Boot REST services, a normalized MySQL database, secure JWT authorization, Razorpay checkout, and an intuitive React interface.",
       architecture: [
-        "React Frontend (Responsive UI, Order Form, Booking System)",
+        "React Frontend (Responsive UI, Shopping Cart, Booking System)",
         "Spring Boot REST Controllers & Service Layer",
         "Spring Security Filters & JWT Provider",
         "Hibernate/JPA Data Repositories",
@@ -240,43 +348,11 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "manasa-gift-studio",
-    title: "Manasa's Gift Studio",
-    category: "E-Commerce",
-    filterCategories: ["All", "Client Work", "E-Commerce", "Business Websites"],
-    description:
-      "A premium digital storefront experience engineered for personalized hampers, curated gift boxes, and corporate gifting with interactive Quick Views and direct WhatsApp lead conversion.",
-    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Vercel", "WhatsApp API", "Framer Motion"],
-    highlights: [
-      "Designed conversion-optimized Build Your Hamper & product quick-view interface",
-      "Integrated instant WhatsApp checkout routing custom gift specifications to business owner",
-      "Mobile-first responsive UX optimized for social media ad traffic conversion",
-      "Deployed live on Vercel high-availability CDN",
-    ],
-    liveUrl: "https://manasa-gift-studio.vercel.app/",
-    isProduction: true,
-    myContribution: "Full UI/UX design, frontend development, product presentation showcase, WhatsApp conversion routing, and Vercel cloud deployment.",
-    featured: true,
-    caseStudy: {
-      challenge: "The client needed an elegant digital storefront to showcase custom hampers and corporate gifting options without requiring a complex, expensive backend for initial launch.",
-      solution: "Created a modern, high-conversion React storefront featuring dynamic product quick views, occasion filtering, and automated WhatsApp order specification routing.",
-      architecture: ["React/TypeScript Single-Page Application", "Tailwind CSS Styling Engine", "WhatsApp Order Generator", "Vercel CDN Infrastructure"],
-      features: [
-        "Curated hamper showcase & corporate gifting portal",
-        "Interactive product quick view modal with item customization",
-        "Direct WhatsApp order dispatch with pre-filled hamper details",
-        "Occasion & category filtering UI",
-      ],
-      integrations: ["WhatsApp Business API Direct Links", "Vercel Analytics"],
-      deployment: "Production deployment on Vercel with automatic GitHub continuous integration.",
-      outcome: "Enabled client to accept direct custom gift orders through WhatsApp with zero checkout friction.",
-    },
-  },
-  {
     id: "v-technologies",
     title: "V Technologies Business Platform",
-    category: "Business Websites",
-    filterCategories: ["All", "Client Work", "Business Websites"],
+    subtitle: "Business & Lead Generation Website",
+    category: "Client Project",
+    filterCategories: ["All", "Client Project", "Business Websites"],
     description:
       "A professional business presence and lead generation platform designed to build market credibility, present B2B services, and drive direct client inquiries.",
     techStack: ["React.js", "JavaScript", "Tailwind CSS", "WhatsApp API", "Email Automation", "Vercel"],
@@ -305,41 +381,11 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "ca-shailesh",
-    title: "CA Shailesh & Co. Platform",
-    category: "Business Websites",
-    filterCategories: ["All", "Client Work", "Business Websites"],
-    description:
-      "A professional services web platform built for a Chartered Accountancy firm, highlighting taxation, auditing, business advisory services, and consultation scheduling.",
-    techStack: ["React.js", "TypeScript", "Tailwind CSS", "WhatsApp API", "Call Direct"],
-    highlights: [
-      "Structured financial & tax advisory service directory",
-      "Integrated direct phone call & WhatsApp consultation triggers",
-      "Clean, professional corporate design instilling financial trust",
-    ],
-    liveUrl: "https://ca-shailesh-patil.vercel.app/",
-    isProduction: true,
-    myContribution: "Full lifecycle development: requirement discovery, UI layout, service copy structuring, and deployment.",
-    featured: true,
-    caseStudy: {
-      challenge: "The CA firm required an authoritative digital presence to allow clients to view tax advisory services and request consultations directly.",
-      solution: "Developed a clean, professional web portal featuring structured service breakdowns and instant contact options.",
-      architecture: ["React Single Page Application", "Responsive Layout Engine", "Direct Action Handler"],
-      features: [
-        "Taxation & Audit service directory",
-        "Direct appointment booking call-to-action buttons",
-        "WhatsApp instant consultation starter",
-      ],
-      integrations: ["WhatsApp API", "Direct Tel Triggers"],
-      deployment: "Cloud web hosting deployment.",
-      outcome: "Established a professional digital front for client acquisition and consultation scheduling.",
-    },
-  },
-  {
     id: "solar-website",
     title: "Vishwa Solar Energy Solutions",
-    category: "Business Websites",
-    filterCategories: ["All", "Client Work", "Business Websites"],
+    subtitle: "Solar & Renewable Energy Business Website",
+    category: "Solar Business Website",
+    filterCategories: ["All", "Client Project", "Business Websites"],
     description:
       "An industry-specific web application built for a solar energy provider to present residential/commercial solar installations, savings calculators, and quote requests.",
     techStack: ["React.js", "JavaScript", "Tailwind CSS", "WhatsApp API", "Form Engine"],
@@ -367,10 +413,43 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "ca-shailesh",
+    title: "CA Shailesh & Co. Platform",
+    subtitle: "Client & Professional Services Website",
+    category: "Client Services Website",
+    filterCategories: ["All", "Client Project", "Business Websites"],
+    description:
+      "A professional services web platform built for a Chartered Accountancy firm, highlighting taxation, auditing, business advisory services, and consultation scheduling.",
+    techStack: ["React.js", "TypeScript", "Tailwind CSS", "WhatsApp API", "Call Direct"],
+    highlights: [
+      "Structured financial & tax advisory service directory",
+      "Integrated direct phone call & WhatsApp consultation triggers",
+      "Clean, professional corporate design instilling financial trust",
+    ],
+    liveUrl: "https://ca-shailesh-patil.vercel.app/",
+    isProduction: true,
+    myContribution: "Full lifecycle development: requirement discovery, UI layout, service copy structuring, and deployment.",
+    featured: false,
+    caseStudy: {
+      challenge: "The CA firm required an authoritative digital presence to allow clients to view tax advisory services and request consultations directly.",
+      solution: "Developed a clean, professional web portal featuring structured service breakdowns and instant contact options.",
+      architecture: ["React Single Page Application", "Responsive Layout Engine", "Direct Action Handler"],
+      features: [
+        "Taxation & Audit service directory",
+        "Direct appointment booking call-to-action buttons",
+        "WhatsApp instant consultation starter",
+      ],
+      integrations: ["WhatsApp API", "Direct Tel Triggers"],
+      deployment: "Cloud web hosting deployment.",
+      outcome: "Established a professional digital front for client acquisition and consultation scheduling.",
+    },
+  },
+  {
     id: "vlbvn",
     title: "VLBVN Organization Platform",
-    category: "Automation",
-    filterCategories: ["All", "Automation", "Client Work", "Business Websites"],
+    subtitle: "Organization & Automation-Oriented Website",
+    category: "Organization Website",
+    filterCategories: ["All", "Client Project", "Automation"],
     description:
       "A modern organizational platform designed to streamline community information architecture, member engagement, and automated event notification workflows.",
     techStack: ["React.js", "TypeScript", "Tailwind CSS", "Vercel", "Automation Scripts"],
@@ -398,58 +477,13 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "ai-automation-lead-solution",
-    title: "AI & Automation Lead Solution",
-    category: "AI & Automation",
-    filterCategories: ["All", "AI & Automation", "Client Work", "Full Stack"],
-    description:
-      "An intelligent, automated lead-capture and business communication solution designed to convert web traffic into qualified leads via automated WhatsApp triggers and smart email notifications.",
-    techStack: [
-      "React.js",
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "AI API Integration",
-      "WhatsApp Business API",
-      "Nodemailer",
-      "Tailwind CSS",
-    ],
-    highlights: [
-      "Automated lead capture routing customer requests directly to WhatsApp & Email",
-      "AI-assisted response drafting for rapid client inquiry follow-ups",
-      "Integrated Nodemailer backend for instant email notifications to business owner",
-    ],
-    githubUrl: "https://github.com/shashidhar0504/Portfolio",
-    isProduction: true,
-    myContribution: "Designed & developed frontend, backend email triggers, WhatsApp automation workflow, and deployment.",
-    featured: false,
-    caseStudy: {
-      challenge: "Small business clients often lose potential leads due to delayed follow-ups and complex contact forms that lack instant messaging access.",
-      solution: "Built a conversion-engineered web solution featuring pre-filled WhatsApp action triggers, automated email dispatchers, and AI-assisted client inquiry routing.",
-      architecture: [
-        "React/TypeScript Frontend with conversion UX",
-        "Node.js & Express API routing backend",
-        "Nodemailer SMTP email service module",
-        "WhatsApp Deep-link Generator Engine",
-      ],
-      features: [
-        "Instant one-click WhatsApp pre-filled conversation starter",
-        "Smart contact form with automated server-side email dispatch",
-        "AI response drafting workflow for customer inquiries",
-        "Mobile-optimized responsive design",
-      ],
-      integrations: ["WhatsApp Deep Links", "Nodemailer SMTP", "AI Assistant API"],
-      deployment: "Deployed live on cloud infrastructure with zero-lag response time.",
-      outcome: "Improved lead conversion rates and eliminated manual inquiry handling delay for client projects.",
-    },
-  },
-  {
     id: "urbaneye",
     title: "UrbanEye Complaint Management System",
-    category: "Academic",
+    subtitle: "Academic Issue Tracking Portal",
+    category: "Academic Project",
     filterCategories: ["All", "Academic", "Full Stack"],
     description:
-      "A centralized web platform for citizens to report, track, and manage urban infrastructure issues like road damage, street lighting, and public waste management.",
+      "A centralized Java web portal for citizens to report, track, and manage urban infrastructure issues like road damage, street lighting, and public waste management.",
     techStack: ["Java", "JSP", "Servlets", "MySQL", "HTML5", "CSS3", "JavaScript", "JDBC"],
     highlights: [
       "Built multi-role architecture (Citizens, Municipal Officers, Admins)",
@@ -483,18 +517,31 @@ export const projects: Project[] = [
 
 export const experience = [
   {
+    role: "Software Development Intern",
+    company: "Infotact Solutions Pvt Ltd | Bangalore, Karnataka",
+    period: "2026 – Present",
+    type: "Internship / Backend Systems",
+    responsibilities: [
+      "Architected GridWeaver event-driven backend telemetry intake handling high-concurrency energy metrics using Java 21 Virtual Threads.",
+      "Built Spring Boot 3 micro-services integrated with Apache Kafka event streaming pipelines and PostgreSQL state persistence.",
+      "Implemented real-time WebSocket telemetry push to responsive React monitoring client for zero-polling visualization.",
+      "Applied Clean Architecture principles separating domain state core from messaging adapters to improve system maintainability.",
+      "Engineered automated test cases and performed backend debugging, memory profiling, and Docker deployment configuration.",
+    ],
+  },
+  {
     role: "Freelance Full Stack Developer & Technical Solution Builder",
     company: "Independent Technical Contractor (Remote)",
     period: "May 2026 – Present",
     type: "Freelance / Client Engineering",
     responsibilities: [
-      "Own full software development lifecycle (SDLC) for client applications from initial requirements gathering to final production cloud deployment.",
-      "Architect and build robust Java & Spring Boot backend micro-services, REST APIs, Spring Security authentication, and MySQL databases.",
+      "Own full software development lifecycle (SDLC) for client applications: Requirement → Development → Integration → Testing → Deployment.",
+      "Architect and build robust Java & Spring Boot backend services, REST APIs, Spring Security authentication, and MySQL databases.",
       "Develop modern, responsive frontends with React.js, TypeScript, and Tailwind CSS focusing on visual excellence and conversion UX.",
       "Deliver industry-specific digital solutions for e-commerce, professional services, renewable energy, and corporate B2B clients.",
-      "Implement third-party business integrations including Razorpay payment gateways, WhatsApp Business API chat triggers, and automated email services.",
-      "Incorporate AI APIs, LLM workflows, and intelligent automation into client solutions to streamline business operations.",
-      "Manage version control with Git/GitHub, perform performance optimization, and provide continuous production support.",
+      "Implement third-party business integrations including Razorpay payment gateways, WhatsApp Business API triggers, and Nodemailer email automation.",
+      "Incorporate AI APIs, LLM workflows, and intelligent automation into client solutions to streamline lead capture and business operations.",
+      "Manage version control with Git/GitHub, perform performance optimization, and provide continuous production support on Vercel.",
     ],
   },
   {
@@ -509,93 +556,48 @@ export const experience = [
   },
 ];
 
-export const aiAutomationSteps = [
-  {
-    step: "01",
-    title: "Java Engineering",
-    subtitle: "Solid Foundation",
-    description: "Mastered core Java OOP concepts, data structures, multithreading, and relational SQL database design.",
-    icon: "Code2",
-  },
-  {
-    step: "02",
-    title: "Full Stack Architecture",
-    subtitle: "Spring Boot & React",
-    description: "Built complete web applications connecting React frontends with Spring Boot REST services, JWT auth, and JPA data layers.",
-    icon: "Layers",
-  },
-  {
-    step: "03",
-    title: "Production Delivery",
-    subtitle: "Real Client Platforms",
-    description: "Engineered and deployed production platforms like UniversalUrja and Manasa's Gift Studio, handling sales, bookings, and payments.",
-    icon: "Rocket",
-  },
-  {
-    step: "04",
-    title: "Third-Party Integrations",
-    subtitle: "Payments & Messaging",
-    description: "Connected applications with Razorpay checkout gateways, WhatsApp communication triggers, and email API pipelines.",
-    icon: "Workflow",
-  },
-  {
-    step: "05",
-    title: "Workflow Automation",
-    subtitle: "Operational Efficiency",
-    description: "Automated client lead routing, instant customer follow-ups, triggered notifications, and deployment scripts.",
-    icon: "Zap",
-  },
-  {
-    step: "06",
-    title: "AI Integration",
-    subtitle: "Intelligent Systems",
-    description: "Integrated modern AI APIs, prompt workflows, and automated intelligence into production web solutions.",
-    icon: "BrainCircuit",
-  },
-];
-
 export const developmentWorkflow = [
   {
     number: "01",
-    phase: "Discover",
-    title: "Requirements & Discovery",
-    description: "Understand the core business problem, user personas, client goals, and technical feasibility.",
+    phase: "Understand",
+    title: "01 — Requirements & Business Objectives",
+    description: "Deeply analyze business problem, target audience, technical scope, and functional success metrics before writing code.",
   },
   {
     number: "02",
-    phase: "Design",
-    title: "Architecture & UI Planning",
-    description: "Design normalized database schemas, REST API endpoints, component hierarchy, and responsive UI mockups.",
+    phase: "Plan",
+    title: "02 — Architecture & UI/UX Planning",
+    description: "Design normalized database schemas, REST API contracts, component hierarchy, event flows, and responsive UI layouts.",
   },
   {
     number: "03",
     phase: "Develop",
-    title: "Full Stack Development",
-    description: "Write clean, maintainable Spring Boot backend services and modular React frontend components.",
+    title: "03 — Full Stack & Backend Development",
+    description: "Implement clean Spring Boot backend services, Java 21 concurrency, relational persistence, and dynamic React components.",
   },
   {
     number: "04",
     phase: "Integrate",
-    title: "Integrations & Automation",
-    description: "Wire up Razorpay payments, WhatsApp messaging triggers, email dispatchers, and AI API endpoints.",
+    title: "04 — Payments, APIs & Automation",
+    description: "Connect Razorpay payment gateways, WhatsApp chat triggers, SMTP email pipelines, and AI API endpoints.",
   },
   {
     number: "05",
     phase: "Test",
-    title: "Testing & Optimization",
-    description: "Validate authentication security, API performance, mobile responsiveness, and cross-browser quality.",
+    title: "05 — Testing, Debugging & Validation",
+    description: "Validate authentication security, endpoint responses, mobile responsiveness, edge cases, and cross-browser quality.",
   },
   {
     number: "06",
     phase: "Deploy",
-    title: "Production Cloud Launch",
-    description: "Configure production environment variables, domain routing, and cloud deployment pipelines.",
+    title: "06 — Production Cloud Deployment",
+    description: "Configure production environment variables, domain routing, CDN caching, and automated cloud continuous deployment.",
   },
   {
     number: "07",
-    phase: "Improve",
-    title: "Support & Iteration",
-    description: "Monitor system health, fix edge-case bugs, and continuously improve user experience based on real feedback.",
+    phase: "Maintain",
+    title: "07 — Support, Fixes & Continuous Support",
+    description: "Monitor live application health, optimize backend performance, resolve user feedback, and iterate features.",
   },
 ];
 
@@ -604,31 +606,31 @@ export const services = [
     title: "Full Stack Java Applications",
     description: "Custom enterprise web applications built with Spring Boot, Spring Security, MySQL, and React.js.",
     icon: "Server",
-    tags: ["Java", "Spring Boot", "React", "MySQL"],
+    tags: ["Java 21", "Spring Boot 3", "React", "MySQL"],
   },
   {
     title: "AI-Powered Business Applications",
-    description: "Enhance traditional web software with AI capabilities, smart chatbots, and intelligent content workflows.",
+    description: "Enhance traditional web software with AI API integrations, prompt engineering, and intelligent content workflows.",
     icon: "BrainCircuit",
     tags: ["AI APIs", "Prompt Engineering", "Intelligent Workflows"],
   },
   {
     title: "Business & Client Digital Storefronts",
-    description: "High-conversion, mobile-optimized digital storefronts, e-commerce hampers, and professional landing pages.",
+    description: "High-conversion, mobile-optimized digital storefronts, service portals, and professional landing pages.",
     icon: "Globe",
     tags: ["React", "TypeScript", "Tailwind CSS"],
   },
   {
     title: "E-Commerce & Booking Platforms",
-    description: "Complete digital shopfronts featuring product catalogs, Razorpay checkout, booking calendars, and admin management.",
+    description: "Complete digital platforms featuring product catalogs, Razorpay checkout, booking calendars, and admin management.",
     icon: "ShoppingCart",
     tags: ["Razorpay", "Bookings", "Inventory", "Admin UI"],
   },
   {
-    title: "API Development & Security",
-    description: "Secure, scalable RESTful APIs with stateless JWT authentication, role management, and clean swagger documentation.",
+    title: "API Development & Event Architecture",
+    description: "Secure, scalable RESTful APIs with stateless JWT authentication, role management, and Kafka telemetry streaming.",
     icon: "ShieldCheck",
-    tags: ["REST APIs", "JWT", "Spring Security"],
+    tags: ["REST APIs", "JWT", "Spring Security", "Kafka"],
   },
   {
     title: "Workflow & Communication Automation",
@@ -640,34 +642,34 @@ export const services = [
 
 export const whyWorkWithMe = [
   {
-    title: "End-to-End Ownership",
-    description: "I manage every layer — UI/UX, frontend, backend, database, APIs, integrations, and deployment.",
+    title: "End-to-End Development",
+    description: "Requirement → Development → Integration → Testing → Deployment. I own every layer from design to release.",
     icon: "CheckCircle2",
   },
   {
-    title: "Production Mindset",
-    description: "I build real-world software designed for uptime, security, performance, and real business use.",
+    title: "Backend Engineering",
+    description: "Java 21 + Spring Boot 3 + REST APIs + Spring Security + Relational Databases (MySQL/PostgreSQL) + Kafka.",
     icon: "Target",
   },
   {
-    title: "AI + Engineering Hybrid",
-    description: "Combining solid core Java software architecture with modern AI capabilities and automation.",
+    title: "Modern Full Stack",
+    description: "React.js + TypeScript + Vite + Tailwind CSS focusing on high visual quality and responsive UI/UX.",
     icon: "Sparkles",
   },
   {
-    title: "Integration Expertise",
-    description: "Seamlessly connecting apps to payment gateways, WhatsApp, email triggers, and third-party APIs.",
+    title: "AI & Automation",
+    description: "AI API integrations + prompt engineering + automation workflows + intelligent digital solutions.",
+    icon: "BrainCircuit",
+  },
+  {
+    title: "Business Integration",
+    description: "Payments (Razorpay) + WhatsApp API + Nodemailer Email + Contact workflows + Third-party APIs.",
     icon: "Plug",
   },
   {
-    title: "Business Understanding",
-    description: "Translating ambiguous client requirements into clear technical specs and on-time solutions.",
+    title: "Client Ready",
+    description: "Proven experience understanding ambiguous business requirements and delivering working, production solutions.",
     icon: "TrendingUp",
-  },
-  {
-    title: "Continuous Evolution",
-    description: "Constantly mastering new tools, frameworks, AI APIs, and deployment practices.",
-    icon: "RefreshCw",
   },
 ];
 
@@ -691,7 +693,7 @@ export const education = [
 
 export const stats = [
   { label: "BCA CGPA", value: "9.17", suffix: "" },
-  { label: "Digital / Dev Projects", value: "8", suffix: "+" },
+  { label: "Digital / Dev Projects", value: "7", suffix: "+" },
   { label: "Client & Business Solutions", value: "5", suffix: "+" },
   { label: "Languages Spoken", value: "6", suffix: "" },
   { label: "Years Building Stack", value: "2", suffix: "+" },
@@ -700,8 +702,8 @@ export const stats = [
 export const achievements = [
   "Maintained outstanding academic record with a 9.17 CGPA in Bachelor of Computer Applications (BCA)",
   "Independently designed, developed, and deployed full-stack production platforms end-to-end (Java, Spring Boot, React, MySQL)",
-  "Delivered client & business projects across diverse domains: E-commerce, Gifting, Professional Services, Solar, and Organizations",
+  "Engineered GridWeaver event-driven backend telemetry intake using Java 21 Virtual Threads, Kafka, PostgreSQL, and WebSockets",
+  "Delivered client & business projects across diverse domains: E-commerce, Professional Services, Solar Energy, and Organizations",
   "Integrated Razorpay payment gateway and WhatsApp-based customer support into live production platforms",
-  "Optimized application load times and resolved backend bottlenecks through efficient database querying and indexing",
   "Recommended digital tools and trained 5+ employees during internship, boosting onboarding speed and productivity",
 ];

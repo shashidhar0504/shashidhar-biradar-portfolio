@@ -11,10 +11,11 @@ export default {
           border: "#E2E8F0",
         },
         brand: {
-          blue: "#2563EB",
-          indigo: "#4F46E5",
-          cyan: "#0284C7",
-          accent: "#2563EB",
+          orange: "#F97316",
+          orangeDark: "#EA580C",
+          charcoal: "#0F172A",
+          charcoalLight: "#1E293B",
+          accent: "#F97316",
           emerald: "#10B981",
         },
       },
@@ -26,9 +27,8 @@ export default {
       boxShadow: {
         soft: "0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(15, 23, 42, 0.03)",
         card: "0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.04)",
-        glow: "0 10px 40px -10px rgba(37, 99, 235, 0.25)",
-        "glow-cyan": "0 10px 35px -5px rgba(2, 132, 199, 0.3)",
-        "glow-blue": "0 10px 35px -5px rgba(37, 99, 235, 0.3)",
+        glow: "0 10px 40px -10px rgba(249, 115, 22, 0.25)",
+        "glow-orange": "0 10px 35px -5px rgba(249, 115, 22, 0.3)",
       },
       backgroundImage: {
         "grid-pattern":

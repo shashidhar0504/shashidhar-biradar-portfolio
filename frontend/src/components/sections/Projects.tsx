@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FolderGit2, Github, CheckCircle2, Sparkles } from "lucide-react";
+import { FolderGit2, Github, CheckCircle2, Sparkles, ArrowUpRight } from "lucide-react";
 import { projects, Project } from "../../data/portfolio";
 import ProjectModal from "../ui/ProjectModal";
 
@@ -7,7 +7,7 @@ export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const filters = ["All", "Full Stack", "AI & Automation", "Client Work", "Business Websites", "E-Commerce", "Production", "Academic"];
+  const filters = ["All", "Full Stack", "Backend", "Production / Freelance", "Client Project", "Academic"];
 
   const filteredProjects = projects.filter((p) => {
     if (activeFilter === "All") return true;
@@ -20,14 +20,14 @@ export default function Projects() {
         {/* Section Header */}
         <div className="text-center space-y-3 mb-12">
           <div className="eyebrow justify-center">
-            <FolderGit2 className="h-4 w-4" />
+            <FolderGit2 className="h-4 w-4 text-orange-600" />
             Featured Engineering Work
           </div>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Production Platforms & <span className="gradient-text">Featured Projects</span>
+            Featured Projects & <span className="gradient-text">Engineering Evidence</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
-            Every project demonstrates end-to-end SDLC ownership — from architecture, Spring Boot REST services, and database normalization to React frontends and cloud deployments.
+            Demonstrating end-to-end SDLC ownership — from architecture, Spring Boot REST services, and database normalization to React frontends and cloud deployments.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function Projects() {
               onClick={() => setActiveFilter(filter)}
               className={`rounded-full px-5 py-2 font-heading text-xs font-bold transition-all duration-200 ${
                 activeFilter === filter
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-500/25 scale-105"
+                  ? "bg-orange-600 text-white shadow-glow-orange scale-105"
                   : "bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-slate-200"
               }`}
             >
@@ -50,24 +50,30 @@ export default function Projects() {
 
         {/* Project Cards Showcase Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200/80 hover:border-blue-500/40 transition-all duration-300 group shadow-lg shadow-slate-200/50 relative overflow-hidden bg-white/90"
+              className="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200/80 hover:border-orange-500/40 transition-all duration-300 group shadow-lg shadow-slate-200/50 relative overflow-hidden bg-white/95"
             >
-              {/* Subtle Ambient Accent Header Line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500" />
+              {/* Subtle Orange Accent Top Line */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-400" />
 
               <div>
-                {/* Status Badges */}
+                {/* Header Sequence & Category Badges */}
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                  <span className="rounded-full bg-blue-50 px-3.5 py-1 font-mono text-xs font-semibold text-blue-700 border border-blue-200">
-                    {project.category}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-xs font-extrabold text-orange-600 bg-orange-50 border border-orange-200 px-2.5 py-1 rounded-lg">
+                      0{index + 1}
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-3.5 py-1 font-mono text-xs font-semibold text-slate-700 border border-slate-200">
+                      {project.category}
+                    </span>
+                  </div>
+
                   {project.isProduction ? (
                     <span className="rounded-full bg-emerald-50 px-3 py-1 font-mono text-xs font-semibold text-emerald-700 border border-emerald-200 flex items-center gap-1.5">
                       <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                      Live Production
+                      Live Production / Verified
                     </span>
                   ) : (
                     <span className="rounded-full bg-slate-100 px-3 py-1 font-mono text-xs text-slate-600 border border-slate-200">
@@ -76,22 +82,28 @@ export default function Projects() {
                   )}
                 </div>
 
-                {/* Title & Description */}
-                <h3 className="font-heading text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3">
+                {/* Title & Subtitle */}
+                <h3 className="font-heading text-2xl font-bold text-slate-900 group-hover:text-orange-600 transition-colors mb-1">
                   {project.title}
                 </h3>
+                {project.subtitle && (
+                  <p className="font-mono text-xs text-orange-600 font-semibold mb-3">
+                    {project.subtitle}
+                  </p>
+                )}
+
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
                   {project.description}
                 </p>
 
-                {/* Highlights List */}
+                {/* Key Features / Deliverables */}
                 <div className="space-y-2 mb-6 rounded-2xl bg-slate-50 p-4 border border-slate-200/80">
                   <h4 className="font-heading text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                    Key Features & Technical Ownership
+                    Key Deliverables & Engineering
                   </h4>
                   {project.highlights.slice(0, 3).map((h, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
-                      <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-orange-600 shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </div>
                   ))}
@@ -100,7 +112,7 @@ export default function Projects() {
                 {/* Tech Stack Pills */}
                 <div className="mb-6">
                   <h4 className="font-heading text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                    Technologies Owned
+                    Technology Stack
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.map((tech, idx) => (
@@ -119,23 +131,20 @@ export default function Projects() {
                   className="btn-primary py-2.5 px-5 text-xs"
                 >
                   <Sparkles className="h-4 w-4" />
-                  View Case Study
+                  Case Study →
                 </button>
 
                 <div className="flex items-center gap-3">
-                  {project.liveUrl ? (
+                  {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 font-heading text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors"
+                      className="inline-flex items-center gap-1 font-heading text-xs font-bold text-orange-600 hover:text-orange-700 transition-colors"
                     >
-                      VIEW LIVE ↗
+                      <span>View Project</span>
+                      <ArrowUpRight className="h-3.5 w-3.5" />
                     </a>
-                  ) : (
-                    <span className="font-mono text-[11px] text-slate-400">
-                      Live Demo Coming Soon
-                    </span>
                   )}
 
                   {project.githubUrl && (
@@ -144,7 +153,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2.5 rounded-xl border border-slate-200 bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 transition-colors"
-                      aria-label="View Source Code"
+                      aria-label="GitHub Repository"
                     >
                       <Github className="h-4 w-4" />
                     </a>
@@ -156,7 +165,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Case Study Detail Modal */}
+      {/* Detailed Case Study Modal */}
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </section>
   );
