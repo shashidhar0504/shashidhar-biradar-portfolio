@@ -14,6 +14,8 @@ export default function Contact() {
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [submittedEmail, setSubmittedEmail] = useState("");
+  const [submittedName, setSubmittedName] = useState("");
 
   const projectTypes = [
     "Full-Time Opportunity",
@@ -52,6 +54,8 @@ export default function Contact() {
       }
 
       setStatus("success");
+      setSubmittedEmail(formData.email);
+      setSubmittedName(formData.name);
       setFormData({
         name: "",
         email: "",
@@ -193,160 +197,182 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right Column: Contact Form */}
+          {/* Right Column: Contact Form or Success Card */}
           <div className="lg:col-span-7">
-            <form
-              onSubmit={handleSubmit}
-              className="glass-panel rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-200 shadow-xl bg-white/95"
-            >
-              <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">Send a Message</h3>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
-                    Your Name <span className="text-orange-600">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. Alex Johnson"
-                    className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none"
-                  />
+            {status === "success" ? (
+              <div className="glass-panel rounded-3xl p-8 sm:p-12 space-y-6 border border-emerald-200 shadow-xl bg-white/95 flex flex-col items-center justify-center text-center animate-in fade-in zoom-in duration-500">
+                <div className="h-20 w-20 bg-emerald-100 rounded-full flex items-center justify-center mb-2 shadow-[0_0_40px_-10px_rgba(16,185,129,0.3)]">
+                  <CheckCircle2 className="h-10 w-10 text-emerald-600" />
                 </div>
-
-                <div>
-                  <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
-                    Email Address <span className="text-orange-600">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="alex@company.com"
-                    className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none"
-                  />
+                <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-slate-900">
+                  Thank you, <span className="text-emerald-600">{submittedName}</span>!
+                </h3>
+                <p className="text-slate-600 leading-relaxed max-w-md mx-auto">
+                  Your message has been successfully received. A confirmation email has been sent to your inbox at <span className="font-semibold text-slate-900 px-1 py-0.5 bg-slate-100 rounded-md">{submittedEmail}</span>.
+                </p>
+                <div className="pt-4 w-full max-w-xs">
+                  <button
+                    onClick={() => {
+                      setStatus("idle");
+                      setSubmittedEmail("");
+                      setSubmittedName("");
+                    }}
+                    className="w-full flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white hover:bg-slate-800 transition-colors shadow-lg shadow-slate-900/20"
+                  >
+                    Send Another Message
+                  </button>
                 </div>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+91 98765 43210"
-                    className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
-                    Company / Organization
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    placeholder="Company Name"
-                    className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
-                  Project / Opportunity Type <span className="text-orange-600">*</span>
-                </label>
-                <select
-                  value={formData.projectType}
-                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                  className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 focus:border-orange-600 focus:bg-white focus:outline-none"
-                >
-                  {projectTypes.map((pt) => (
-                    <option key={pt} value={pt} className="bg-white text-slate-900">
-                      {pt}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
-                  Message Details <span className="text-orange-600">*</span>
-                </label>
-                <textarea
-                  required
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Describe your requirements, software goals, or opportunity..."
-                  className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none resize-none"
-                />
-              </div>
-
-              {/* Status Notifications */}
-              {status === "success" && (
-                <div className="flex items-center gap-2 rounded-xl bg-emerald-50 p-4 border border-emerald-200 text-emerald-800 text-xs font-mono">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600" />
-                  <span>Thank you! Your message has been sent successfully. Shashidhar will respond promptly.</span>
-                </div>
-              )}
-
-              {status === "error" && (
-                <div className="flex flex-col gap-3 rounded-xl bg-rose-50 p-4 border border-rose-200 text-rose-800 text-xs font-mono">
-                  <div className="flex items-center gap-2">
-                    <AlertCircle className="h-5 w-5 shrink-0 text-rose-600" />
-                    <span>{errorMessage}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    <a
-                      href={`https://wa.me/${profile.whatsappNumber}?text=${encodeURIComponent(
-                        `Hi Shashidhar!\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nMessage: ${formData.message}`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-600 text-white font-sans text-xs font-bold hover:bg-emerald-700 transition-colors shadow-sm"
-                    >
-                      <MessageSquare className="h-4 w-4" />
-                      Send via WhatsApp Instead ↗
-                    </a>
-                    <a
-                      href={`mailto:${profile.email}?subject=${encodeURIComponent(`Inquiry: ${formData.projectType}`)}&body=${encodeURIComponent(
-                        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nMessage: ${formData.message}`
-                      )}`}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-orange-600 text-white font-sans text-xs font-bold hover:bg-orange-700 transition-colors shadow-sm"
-                    >
-                      <Mail className="h-4 w-4" />
-                      Send via Direct Email ↗
-                    </a>
-                  </div>
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="btn-primary w-full justify-center py-3.5"
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="glass-panel rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-200 shadow-xl bg-white/95 relative overflow-hidden"
               >
-                {status === "loading" ? (
-                  <span className="flex items-center gap-2">
-                    <span className="h-4 w-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
-                    Sending Message...
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    <span>Let's Talk</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </span>
+                {/* Optional subtle gradient in background */}
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-orange-500/10 blur-2xl rounded-full pointer-events-none" />
+
+                <h3 className="font-heading text-xl font-bold text-slate-900 mb-2 relative z-10">Send a Message</h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+                  <div>
+                    <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
+                      Your Name <span className="text-orange-600">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="e.g. Alex Johnson"
+                      className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
+                      Email Address <span className="text-orange-600">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="alex@company.com"
+                      className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+                  <div>
+                    <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="+91 98765 43210"
+                      className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
+                      Company / Organization
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      placeholder="Company Name"
+                      className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="relative z-10">
+                  <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
+                    Project / Opportunity Type <span className="text-orange-600">*</span>
+                  </label>
+                  <select
+                    value={formData.projectType}
+                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                    className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 focus:border-orange-600 focus:bg-white focus:outline-none transition-all"
+                  >
+                    {projectTypes.map((pt) => (
+                      <option key={pt} value={pt} className="bg-white text-slate-900">
+                        {pt}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="relative z-10">
+                  <label className="block font-mono text-xs text-slate-700 font-semibold mb-1.5">
+                    Message Details <span className="text-orange-600">*</span>
+                  </label>
+                  <textarea
+                    required
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Describe your requirements, software goals, or opportunity..."
+                    className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-orange-600 focus:bg-white focus:outline-none resize-none transition-all"
+                  />
+                </div>
+
+                {status === "error" && (
+                  <div className="flex flex-col gap-3 rounded-xl bg-rose-50 p-4 border border-rose-200 text-rose-800 text-xs font-mono relative z-10 animate-in fade-in slide-in-from-bottom-2">
+                    <div className="flex items-center gap-2">
+                      <AlertCircle className="h-5 w-5 shrink-0 text-rose-600" />
+                      <span>{errorMessage}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <a
+                        href={`https://wa.me/${profile.whatsappNumber}?text=${encodeURIComponent(
+                          `Hi Shashidhar!\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nMessage: ${formData.message}`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-600 text-white font-sans text-xs font-bold hover:bg-emerald-700 transition-colors shadow-sm"
+                      >
+                        <MessageSquare className="h-4 w-4" />
+                        Send via WhatsApp Instead ↗
+                      </a>
+                      <a
+                        href={`mailto:${profile.email}?subject=${encodeURIComponent(`Inquiry: ${formData.projectType}`)}&body=${encodeURIComponent(
+                          `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nMessage: ${formData.message}`
+                        )}`}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-orange-600 text-white font-sans text-xs font-bold hover:bg-orange-700 transition-colors shadow-sm"
+                      >
+                        <Mail className="h-4 w-4" />
+                        Send via Direct Email ↗
+                      </a>
+                    </div>
+                  </div>
                 )}
-              </button>
-            </form>
+
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="btn-primary w-full justify-center py-3.5 relative z-10 group overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                  {status === "loading" ? (
+                    <span className="flex items-center gap-2 relative z-10">
+                      <span className="h-4 w-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                      Sending Message...
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-2 relative z-10">
+                      <span>Let's Talk</span>
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  )}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>
