@@ -3,14 +3,14 @@
 
 export const profile = {
   name: "Shashidhar Biradar",
-  primaryTitle: "Full Stack Java Developer | AI & Automation Engineer",
-  secondaryTitle: "Spring Boot & React Specialist | Backend Developer | Technical Solution Builder",
+  primaryTitle: "Full Stack Java Developer | AI Data Annotator",
+  secondaryTitle: "Spring Boot & React Specialist | Backend Developer | AI/ML Data Annotation",
   roles: [
     "Full Stack Java Developer",
-    "AI & Automation Engineer",
+    "AI Data Annotator",
     "Spring Boot & React Specialist",
     "Backend Developer",
-    "Technical Solution Builder",
+    "AI/ML Data Quality",
   ],
   location: "Pune, Maharashtra, India",
   phone: "+91 6363284060",
@@ -18,7 +18,7 @@ export const profile = {
   email: "shashidharbiradar6@gmail.com",
   github: "https://github.com/shashidhar0504",
   linkedin: "https://www.linkedin.com/in/shashidhar-biradar-20a999293/",
-  resumeFile: "https://drive.google.com/file/d/1OtPn6N2_vjpEac3hwBfwqmav_aWpaUcX/view?usp=sharing",
+  resumeFile: "https://drive.google.com/file/d/1GtPMmvEB89jzdN_O_LINgll5tbCH6wWz/view?usp=sharing",
   profileImage: "/profile.jpg",
   tagline: "I build scalable web applications, backend systems, AI-powered solutions and automation workflows that solve real-world problems.",
   currentlyBuilding: "GridWeaver — Java 21 • Spring Boot • Kafka • PostgreSQL",
@@ -36,9 +36,9 @@ export const profile = {
 export const about = {
   headline: "Building production-ready software with Java engineering, AI capabilities, and end-to-end SDLC ownership.",
   paragraphs: [
-    "I'm a Full Stack Java Developer and AI & Automation Engineer with hands-on experience crafting scalable backend microservices, web platforms, business digital storefronts, and intelligent automation systems. My core engineering foundation centers on Java 21, Spring Boot 3, Spring Security, Hibernate/JPA, MySQL, PostgreSQL, and React.js.",
-    "I take complete ownership of the software development lifecycle — from initial requirement discovery, architecture design, and database normalization to REST API development, third-party payment/communication integrations, automated workflows, and production cloud deployment.",
-    "Beyond core software architecture, I integrate modern AI models, LLM APIs, prompt workflows, and automated communication triggers into business applications — turning complex requirements into seamless, client-focused digital products.",
+    "I'm a Full Stack Java Developer and AI Data Annotator with hands-on experience crafting scalable backend microservices, web platforms, and handling text and audio data for AI/ML projects. My core engineering foundation centers on Java 21, Spring Boot, React.js, and modern database systems.",
+    "I take complete ownership of the software development lifecycle — from initial requirement discovery and architecture design to REST API development and production deployment.",
+    "Alongside my development work, I have practical experience in AI data annotation, including audio transcription, data labeling, and quality checking, ensuring accurate and consistent datasets for machine learning models.",
   ],
   highlights: [
     { label: "End-to-End Ownership", value: "Requirements → Design → Dev → Cloud Launch" },
@@ -168,15 +168,13 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "AI & Automation",
+    title: "AI & Data Annotation",
     skills: [
-      { name: "AI Integration", level: "Practical", category: "API Integration", description: "Connecting LLM APIs into web applications & workflows", icon: "Brain" },
-      { name: "Prompt Engineering", level: "Strong", category: "AI Workflows", description: "System prompts, structured output JSON formatting", icon: "MessageSquare" },
-      { name: "AI-Assisted Dev", level: "Advanced", category: "Productivity", description: "Accelerated prototyping, code analysis, testing", icon: "Zap" },
-      { name: "AI-Powered Workflows", level: "Strong", category: "Automation", description: "Intelligent lead routing and automated response drafting", icon: "Workflow" },
-      { name: "API/LLM Integration", level: "Strong", category: "Integrations", description: "RESTful invocation of AI services into web frontends", icon: "Globe" },
-      { name: "Workflow Automation", level: "Strong", category: "Process", description: "Lead capture triggers, automated messaging pipelines", icon: "Workflow" },
-      { name: "Intelligent Solutions", level: "Practical", category: "Digital Products", description: "Blending business logic with automated communication triggers", icon: "Brain" },
+      { name: "AI Data Annotation", level: "Professional", category: "Data Processing", description: "Handling text and audio data for AI/ML projects", icon: "Database" },
+      { name: "Audio Transcription", level: "Professional", category: "Data Processing", description: "Audio and speech data transcription & labeling", icon: "Mic" },
+      { name: "Data Quality Review", level: "Professional", category: "Quality Assurance", description: "Reviewing datasets against project-specific guidelines", icon: "CheckCircle" },
+      { name: "Dataset Preparation", level: "Professional", category: "AI/ML", description: "Data classification, labeling, and dataset preparation", icon: "Layers" },
+      { name: "ChatGPT & Claude", level: "Advanced", category: "AI Tools", description: "AI-assisted development and prompt engineering", icon: "Bot" },
     ],
   },
   {
@@ -516,6 +514,18 @@ export const projects: Project[] = [
 ];
 
 export const experience = [
+  {
+    role: "AI Data Annotator",
+    company: "Vaidik Eduservices Pvt. Ltd.",
+    period: "September 2026 – Present",
+    type: "Data / AI Operations",
+    responsibilities: [
+      "Handling text and audio data for AI/ML projects.",
+      "Performing audio and speech annotation, transcription, classification, and data labeling.",
+      "Conducting data quality checks to ensure accuracy and consistency across datasets.",
+      "Following detailed project-specific guidelines to prepare high-quality training data for AI models.",
+    ],
+  },
   {
     role: "Software Development Intern",
     company: "Infotact Solutions Pvt Ltd | Bangalore, Karnataka",
