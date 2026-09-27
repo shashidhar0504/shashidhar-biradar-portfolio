@@ -44,7 +44,7 @@ export default function Experience() {
 
                 <div className="rounded-2xl bg-slate-100 p-3.5 border border-slate-200 text-xs font-mono text-slate-700 flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-orange-600 shrink-0" />
-                  <span>Bangalore / Pune / Remote</span>
+                  <span>{item.location || "Bangalore / Pune / Remote"}</span>
                 </div>
               </div>
 

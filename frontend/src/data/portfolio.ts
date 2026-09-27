@@ -516,7 +516,8 @@ export const projects: Project[] = [
 export const experience = [
   {
     role: "AI Data Annotator",
-    company: "Vaidik Eduservices Pvt. Ltd. | Pune, On-site",
+    company: "Vaidik Eduservices Pvt. Ltd.",
+    location: "Pune City | On-site",
     period: "September 2026 – Present",
     type: "Data / AI Operations",
     responsibilities: [
@@ -529,6 +530,7 @@ export const experience = [
   {
     role: "Software Development Intern",
     company: "Infotact Solutions Pvt Ltd",
+    location: "Remote",
     period: "2026 – Present",
     type: "Internship / Backend Systems",
     responsibilities: [
@@ -541,7 +543,8 @@ export const experience = [
   },
   {
     role: "Freelance Full Stack Developer & Technical Solution Builder",
-    company: "Independent Technical Contractor (Remote)",
+    company: "Independent Technical Contractor",
+    location: "Remote",
     period: "May 2026 – Present",
     type: "Freelance / Client Engineering",
     responsibilities: [
@@ -557,6 +560,7 @@ export const experience = [
   {
     role: "Marketing & Graphic Design Intern",
     company: "I-Well Health Solutions Pvt. Ltd.",
+    location: "Pune | On-site",
     period: "May 2025 – August 2025",
     type: "Internship",
     responsibilities: [
