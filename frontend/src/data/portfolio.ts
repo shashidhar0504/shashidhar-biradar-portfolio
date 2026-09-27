@@ -516,7 +516,7 @@ export const projects: Project[] = [
 export const experience = [
   {
     role: "AI Data Annotator",
-    company: "Vaidik Eduservices Pvt. Ltd. | On-site",
+    company: "Vaidik Eduservices Pvt. Ltd. | Pune, On-site",
     period: "September 2026 – Present",
     type: "Data / AI Operations",
     responsibilities: [
